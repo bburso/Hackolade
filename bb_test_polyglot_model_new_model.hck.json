@@ -2,7 +2,7 @@
   "modelName": "New model",
   "collections": [
     {
-      "collectionName": "Test LOCAL CHANGE One",
+      "collectionName": "Test Remote  CHANGE One",
       "type": "object",
       "properties": [
         {
