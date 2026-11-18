@@ -2,7 +2,7 @@
   "modelName": "New model",
   "collections": [
     {
-      "collectionName": "Test Remote  CHANGE One",
+      "collectionName": "Test Local CHANGE One",
       "type": "object",
       "properties": [
         {
@@ -239,7 +239,7 @@
   "users": [],
   "diagramViews": [],
   "idToNameHashTable": {
-    "72e35d63-602e-4581-80e4-4ff6f361cc62": "Test LOCAL CHANGE One",
+    "72e35d63-602e-4581-80e4-4ff6f361cc62": "Test Local CHANGE One",
     "ae505a51-620e-4b36-915c-9375af3a2a17": "R999",
     "1e33e035-e1c9-4d08-94e3-a444f0fb3d7d": "attribute2222gggg",
     "7c2529e1-db7d-4ad6-b3b2-19f23679bb1f": "New bbbbvattribute77772",
@@ -276,7 +276,7 @@
   "creationTS": "2026-11-18T13:06:21.561Z",
   "GUID": "951136ca-1bf3-438b-b38d-dc9edcab052f",
   "isLineageEnabled": false,
-  "lastModifTS": "2026-11-18T14:32:56.484Z",
+  "lastModifTS": "2026-11-18T14:36:05.930Z",
   "persistenceSchemaVersion": "9",
   "isCreatedByPlugin": true,
   "pluginInformation": {
@@ -296,7 +296,7 @@
             "GUID": "72e35d63-602e-4581-80e4-4ff6f361cc62",
             "x": 1692,
             "y": 1362,
-            "width": 217,
+            "width": 280,
             "height": 86,
             "color": {
               "hex": "#2196F3"
