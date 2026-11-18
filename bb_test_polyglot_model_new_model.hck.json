@@ -6,7 +6,7 @@
       "type": "object",
       "properties": [
         {
-          "name": "attribute1111",
+          "name": "attribute999",
           "hackoladeMeta": {},
           "isActivated": true,
           "primaryKey": false,
