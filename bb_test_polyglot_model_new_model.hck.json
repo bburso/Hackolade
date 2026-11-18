@@ -2,24 +2,21 @@
   "modelName": "New model",
   "collections": [
     {
-      "collectionName": "Test Number One",
+      "collectionName": "Test LOCAL CHANGE One",
       "type": "object",
       "properties": [
         {
-          "name": "REMOTE999",
+          "name": "R999",
           "hackoladeMeta": {},
           "isActivated": true,
           "primaryKey": false,
           "required": false,
-          "alternateKey": false,
           "childType": "varchar",
           "type": "string",
           "compositeKey": [
             "compositePrimaryKey",
             "compositeUniqueKey"
           ],
-          "compositePrimaryKey": false,
-          "compositeUniqueKey": false,
           "GUID": "ae505a51-620e-4b36-915c-9375af3a2a17",
           "error": {
             "name": false,
@@ -45,20 +42,17 @@
           }
         },
         {
-          "name": "New attribute77772",
+          "name": "New bbbbvattribute77772",
           "hackoladeMeta": {},
           "isActivated": true,
           "primaryKey": false,
           "required": false,
-          "alternateKey": false,
           "childType": "varchar",
           "type": "string",
           "compositeKey": [
             "compositePrimaryKey",
             "compositeUniqueKey"
           ],
-          "compositePrimaryKey": false,
-          "compositeUniqueKey": false,
           "GUID": "7c2529e1-db7d-4ad6-b3b2-19f23679bb1f",
           "error": {
             "name": false,
@@ -245,10 +239,10 @@
   "users": [],
   "diagramViews": [],
   "idToNameHashTable": {
-    "72e35d63-602e-4581-80e4-4ff6f361cc62": "Test Number One",
-    "ae505a51-620e-4b36-915c-9375af3a2a17": "New attribute",
+    "72e35d63-602e-4581-80e4-4ff6f361cc62": "Test LOCAL CHANGE One",
+    "ae505a51-620e-4b36-915c-9375af3a2a17": "R999",
     "1e33e035-e1c9-4d08-94e3-a444f0fb3d7d": "attribute2222gggg",
-    "7c2529e1-db7d-4ad6-b3b2-19f23679bb1f": "New attribute2",
+    "7c2529e1-db7d-4ad6-b3b2-19f23679bb1f": "New bbbbvattribute77772",
     "e54aa180-63a6-498b-8b0a-7c9c4e15b359": "New entity1",
     "1efe12f4-ecad-4768-a943-9dfce1a37d8f": "New attribute",
     "86edece6-80aa-4161-82e9-ebb03abe93aa": "New attribute1",
@@ -282,7 +276,7 @@
   "creationTS": "2026-11-18T13:06:21.561Z",
   "GUID": "951136ca-1bf3-438b-b38d-dc9edcab052f",
   "isLineageEnabled": false,
-  "lastModifTS": "2026-11-18T14:03:33.309Z",
+  "lastModifTS": "2026-11-18T14:32:56.484Z",
   "persistenceSchemaVersion": "9",
   "isCreatedByPlugin": true,
   "pluginInformation": {
