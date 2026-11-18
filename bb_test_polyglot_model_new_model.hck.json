@@ -2,11 +2,11 @@
   "modelName": "New model",
   "collections": [
     {
-      "collectionName": "New entity",
+      "collectionName": "Test Entity Number One",
       "type": "object",
       "properties": [
         {
-          "name": "New attribute",
+          "name": "attribute1111",
           "hackoladeMeta": {},
           "isActivated": true,
           "primaryKey": false,
@@ -27,7 +27,7 @@
           }
         },
         {
-          "name": "New attribute1",
+          "name": "attribute2222",
           "hackoladeMeta": {},
           "isActivated": true,
           "primaryKey": false,
