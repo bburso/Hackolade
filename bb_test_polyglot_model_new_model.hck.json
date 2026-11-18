@@ -153,7 +153,7 @@
       }
     },
     {
-      "collectionName": "Locally addedd entitiy",
+      "collectionName": "Locally again addedd entitiy",
       "type": "object",
       "properties": [
         {
@@ -247,7 +247,7 @@
     "1efe12f4-ecad-4768-a943-9dfce1a37d8f": "New attribute",
     "86edece6-80aa-4161-82e9-ebb03abe93aa": "New attribute1",
     "e633ac2e-2004-42ed-9a5b-684b1f336937": "New attribute2",
-    "8060d46e-c54e-4fa1-a613-2c17d77ba447": "Locally addedd entitiy",
+    "8060d46e-c54e-4fa1-a613-2c17d77ba447": "Locally again addedd entitiy",
     "80a79cf7-20c1-467b-8475-f0664ffc7845": "New attribute",
     "0f5c5d7b-01d6-436d-a664-77bde3ddc7a4": "New attribute1",
     "57feaf71-925e-45b0-85a9-ae2c74cf33e5": "New attribute2"
@@ -276,7 +276,7 @@
   "creationTS": "2026-11-18T13:06:21.561Z",
   "GUID": "951136ca-1bf3-438b-b38d-dc9edcab052f",
   "isLineageEnabled": false,
-  "lastModifTS": "2026-11-18T14:36:05.930Z",
+  "lastModifTS": "2026-11-18T14:38:45.512Z",
   "persistenceSchemaVersion": "9",
   "isCreatedByPlugin": true,
   "pluginInformation": {
@@ -316,7 +316,7 @@
             "GUID": "8060d46e-c54e-4fa1-a613-2c17d77ba447",
             "x": 1643,
             "y": 1135,
-            "width": 217,
+            "width": 296,
             "height": 86,
             "color": {
               "hex": "#2196F3"
