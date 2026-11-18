@@ -68390,7 +68390,7 @@
       "name": "BB Test for GIT",
       "type": "annotation",
       "disableInitialFocus": true,
-      "value": "A test annotation on this file"
+      "value": "A test annotation on this file.   second change\n"
     }
   ],
   "businessGlossaries": [],
@@ -68403,7 +68403,7 @@
   "hackoladeMeta": {
     "validationErrors": {}
   },
-  "lastModifTS": "2026-11-18T11:25:05.168Z",
+  "lastModifTS": "2026-11-18T11:30:39.956Z",
   "persistenceSchemaVersion": "9",
   "isCreatedByPlugin": true,
   "pluginInformation": {
