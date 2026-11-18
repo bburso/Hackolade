@@ -1,0 +1,595 @@
+{
+  "modelName": "Data Dictionary",
+  "collections": [
+    {
+      "collectionName": "Customer",
+      "type": "object",
+      "properties": [
+        {
+          "isActivated": true,
+          "compositeKey": [
+            "compositePrimaryKey",
+            "compositeUniqueKey"
+          ],
+          "name": "Customer id",
+          "primaryKey": false,
+          "required": false,
+          "GUID": "1692721e-18a8-454f-b303-5bbb4aa753dd",
+          "type": "reference",
+          "$ref": "#model/definitions/Customer id",
+          "refType": "model",
+          "ref": "ae505a51-620e-4b36-915c-9375af3a2a17",
+          "refIdPath": [
+            "951136ca-1bf3-438b-b38d-dc9edcab052f",
+            "493e48af-a173-4b88-8138-0757920272e6",
+            "ae505a51-620e-4b36-915c-9375af3a2a17"
+          ],
+          "hackoladeMeta": {}
+        },
+        {
+          "isActivated": true,
+          "compositeKey": [
+            "compositePrimaryKey",
+            "compositeUniqueKey"
+          ],
+          "name": "Customer Name",
+          "primaryKey": false,
+          "required": false,
+          "GUID": "762c57ce-6264-4cfd-a250-3a6ed566a097",
+          "type": "reference",
+          "$ref": "#model/definitions/Customer Name",
+          "refType": "model",
+          "ref": "1e33e035-e1c9-4d08-94e3-a444f0fb3d7d",
+          "refIdPath": [
+            "951136ca-1bf3-438b-b38d-dc9edcab052f",
+            "493e48af-a173-4b88-8138-0757920272e6",
+            "1e33e035-e1c9-4d08-94e3-a444f0fb3d7d"
+          ],
+          "hackoladeMeta": {}
+        },
+        {
+          "isActivated": true,
+          "compositeKey": [
+            "compositePrimaryKey",
+            "compositeUniqueKey"
+          ],
+          "name": "Customer DOB",
+          "primaryKey": false,
+          "required": false,
+          "GUID": "9c41e93b-45d0-48ae-aefe-1f8ab4ed8554",
+          "type": "reference",
+          "$ref": "#model/definitions/Customer DOB",
+          "refType": "model",
+          "ref": "7c2529e1-db7d-4ad6-b3b2-19f23679bb1f",
+          "refIdPath": [
+            "951136ca-1bf3-438b-b38d-dc9edcab052f",
+            "493e48af-a173-4b88-8138-0757920272e6",
+            "7c2529e1-db7d-4ad6-b3b2-19f23679bb1f"
+          ],
+          "hackoladeMeta": {}
+        }
+      ],
+      "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "50dc4494-0d80-44ba-8705-c9462914418e"
+      },
+      "isActivated": true,
+      "additionalProperties": false,
+      "GUID": "72e35d63-602e-4581-80e4-4ff6f361cc62",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      },
+      "bucketId": "bc5b89c5-7e3b-43af-9344-6c4121f590d0"
+    },
+    {
+      "collectionName": "Employer",
+      "type": "object",
+      "properties": [
+        {
+          "name": "Employer Id",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "primaryKey": false,
+          "required": false,
+          "childType": "varchar",
+          "type": "string",
+          "compositeKey": [
+            "compositePrimaryKey",
+            "compositeUniqueKey"
+          ],
+          "GUID": "1efe12f4-ecad-4768-a943-9dfce1a37d8f",
+          "code": "employer_id",
+          "description": "This is an employer id",
+          "comments": "To be used for a employer in any company",
+          "length": 10,
+          "mode": "string",
+          "error": {}
+        },
+        {
+          "name": "Employer Name",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "primaryKey": false,
+          "required": false,
+          "childType": "varchar",
+          "type": "string",
+          "compositeKey": [
+            "compositePrimaryKey",
+            "compositeUniqueKey"
+          ],
+          "GUID": "86edece6-80aa-4161-82e9-ebb03abe93aa",
+          "code": "employer_name",
+          "description": "The name of an empoyer",
+          "error": {
+            "name": false,
+            "code": false
+          }
+        },
+        {
+          "name": "Employer Region",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "primaryKey": false,
+          "required": false,
+          "childType": "varchar",
+          "type": "string",
+          "compositeKey": [
+            "compositePrimaryKey",
+            "compositeUniqueKey"
+          ],
+          "GUID": "e633ac2e-2004-42ed-9a5b-684b1f336937",
+          "error": {
+            "name": false,
+            "code": false
+          }
+        }
+      ],
+      "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "edc201e6-a86b-42b5-bdbb-cf8bff3cfce9"
+      },
+      "isActivated": true,
+      "additionalProperties": false,
+      "GUID": "e54aa180-63a6-498b-8b0a-7c9c4e15b359",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      },
+      "bucketId": "bc5b89c5-7e3b-43af-9344-6c4121f590d0"
+    },
+    {
+      "collectionName": "Country",
+      "type": "object",
+      "properties": [
+        {
+          "name": "Country Code",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "primaryKey": false,
+          "required": false,
+          "childType": "varchar",
+          "type": "string",
+          "compositeKey": [
+            "compositePrimaryKey",
+            "compositeUniqueKey"
+          ],
+          "GUID": "80a79cf7-20c1-467b-8475-f0664ffc7845",
+          "error": {
+            "name": false,
+            "code": false
+          },
+          "glossaryTerms": [
+            {
+              "GUID": "14452c9d-6c40-4c4f-895f-fd18b9f78b86",
+              "glossaryTermId": "d5c1381a-5476-41b9-82ec-48173da9ab82"
+            }
+          ],
+          "description": "This is the code that represents countries"
+        },
+        {
+          "name": "Country Name",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "primaryKey": false,
+          "required": false,
+          "childType": "varchar",
+          "type": "string",
+          "compositeKey": [
+            "compositePrimaryKey",
+            "compositeUniqueKey"
+          ],
+          "GUID": "0f5c5d7b-01d6-436d-a664-77bde3ddc7a4",
+          "error": {
+            "name": false,
+            "code": false
+          },
+          "glossaryTerms": [
+            {
+              "GUID": "b468ebd2-479c-4997-afc0-707c3a4d2f8e",
+              "glossaryTermId": "e2c4f625-b7b8-4954-8974-2f2515001e8b"
+            }
+          ],
+          "description": "This is the UN agreed name for a country"
+        },
+        {
+          "name": "Country Capital",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "primaryKey": false,
+          "required": false,
+          "childType": "varchar",
+          "type": "string",
+          "compositeKey": [
+            "compositePrimaryKey",
+            "compositeUniqueKey"
+          ],
+          "GUID": "57feaf71-925e-45b0-85a9-ae2c74cf33e5",
+          "error": {
+            "name": false,
+            "code": false
+          }
+        }
+      ],
+      "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "bdba0ece-9235-4933-9db8-9cd475e56f28"
+      },
+      "isActivated": true,
+      "additionalProperties": false,
+      "GUID": "8060d46e-c54e-4fa1-a613-2c17d77ba447",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      },
+      "bucketId": "bc5b89c5-7e3b-43af-9344-6c4121f590d0"
+    }
+  ],
+  "buckets": [
+    {
+      "name": "Data Dictionary",
+      "type": "bucket",
+      "collectionIds": [
+        "8060d46e-c54e-4fa1-a613-2c17d77ba447",
+        "e54aa180-63a6-498b-8b0a-7c9c4e15b359",
+        "72e35d63-602e-4581-80e4-4ff6f361cc62"
+      ],
+      "backgroundColor": {
+        "r": 129,
+        "g": 212,
+        "b": 250,
+        "a": 1
+      },
+      "show": true,
+      "isActivated": true,
+      "indexes": [],
+      "GUID": "bc5b89c5-7e3b-43af-9344-6c4121f590d0",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
+    }
+  ],
+  "views": [],
+  "relationships": [],
+  "users": [],
+  "diagramViews": [],
+  "idToNameHashTable": {
+    "72e35d63-602e-4581-80e4-4ff6f361cc62": "Customer",
+    "e54aa180-63a6-498b-8b0a-7c9c4e15b359": "Employer",
+    "86edece6-80aa-4161-82e9-ebb03abe93aa": "Employer Name",
+    "e633ac2e-2004-42ed-9a5b-684b1f336937": "Employer Region",
+    "8060d46e-c54e-4fa1-a613-2c17d77ba447": "Country",
+    "0f5c5d7b-01d6-436d-a664-77bde3ddc7a4": "Country Name",
+    "57feaf71-925e-45b0-85a9-ae2c74cf33e5": "Country Capital",
+    "1efe12f4-ecad-4768-a943-9dfce1a37d8f": "Employer Id",
+    "80a79cf7-20c1-467b-8475-f0664ffc7845": "Country Code",
+    "bc5b89c5-7e3b-43af-9344-6c4121f590d0": "Data Dictionary",
+    "1692721e-18a8-454f-b303-5bbb4aa753dd": "Customer id",
+    "ae505a51-620e-4b36-915c-9375af3a2a17": "Customer id",
+    "762c57ce-6264-4cfd-a250-3a6ed566a097": "Customer Name",
+    "1e33e035-e1c9-4d08-94e3-a444f0fb3d7d": "Customer Name",
+    "9c41e93b-45d0-48ae-aefe-1f8ab4ed8554": "Customer DOB",
+    "7c2529e1-db7d-4ad6-b3b2-19f23679bb1f": "Customer DOB"
+  },
+  "definitions": {
+    "type": "definitions",
+    "properties": [
+      {
+        "name": "Customer id",
+        "hackoladeMeta": {},
+        "isActivated": true,
+        "primaryKey": false,
+        "required": false,
+        "childType": "varchar",
+        "type": "string",
+        "compositeKey": [
+          "compositePrimaryKey",
+          "compositeUniqueKey"
+        ],
+        "GUID": "ae505a51-620e-4b36-915c-9375af3a2a17",
+        "error": {
+          "name": false,
+          "code": false
+        },
+        "definitionRefs": [
+          [
+            "72e35d63-602e-4581-80e4-4ff6f361cc62",
+            "1692721e-18a8-454f-b303-5bbb4aa753dd"
+          ]
+        ]
+      },
+      {
+        "name": "Customer Name",
+        "hackoladeMeta": {},
+        "isActivated": true,
+        "primaryKey": false,
+        "required": false,
+        "childType": "varchar",
+        "type": "string",
+        "compositeKey": [
+          "compositePrimaryKey",
+          "compositeUniqueKey"
+        ],
+        "GUID": "1e33e035-e1c9-4d08-94e3-a444f0fb3d7d",
+        "error": {
+          "name": false,
+          "code": false
+        },
+        "definitionRefs": [
+          [
+            "72e35d63-602e-4581-80e4-4ff6f361cc62",
+            "762c57ce-6264-4cfd-a250-3a6ed566a097"
+          ]
+        ]
+      },
+      {
+        "name": "Customer DOB",
+        "hackoladeMeta": {},
+        "isActivated": true,
+        "primaryKey": false,
+        "required": false,
+        "childType": "varchar",
+        "type": "string",
+        "compositeKey": [
+          "compositePrimaryKey",
+          "compositeUniqueKey"
+        ],
+        "GUID": "7c2529e1-db7d-4ad6-b3b2-19f23679bb1f",
+        "error": {
+          "name": false,
+          "code": false
+        },
+        "definitionRefs": [
+          [
+            "72e35d63-602e-4581-80e4-4ff6f361cc62",
+            "9c41e93b-45d0-48ae-aefe-1f8ab4ed8554"
+          ]
+        ]
+      }
+    ],
+    "GUID": "493e48af-a173-4b88-8138-0757920272e6"
+  },
+  "polyglotDefinitions": {
+    "type": "polyglotDefinitions",
+    "properties": [],
+    "GUID": "df0a4c5e-8ea5-4565-b689-3d8ddbb89407"
+  },
+  "externalDefinitions": {
+    "type": "externalDefinitions",
+    "properties": [],
+    "GUID": "e454f833-c160-447b-becc-22e6f524ff24"
+  },
+  "sources": [],
+  "decorativeSymbols": [],
+  "businessGlossaries": [
+    {
+      "GUID": "42b1e5ec-36b4-4c88-a3f7-40c57df1ebcd",
+      "name": "Business Glossary.csv",
+      "updatedAt": "2026-11-18T15:31:17.381Z",
+      "hasHeaders": true,
+      "format": "custom",
+      "collibraPublish": false,
+      "columnSeparator": ",",
+      "kind": "relativePath",
+      "relativePath": "Business Glossary.csv",
+      "mapping": [
+        {
+          "GUID": "82b43ad3-da05-4c09-9e7d-852ea40580b8",
+          "columnIdentifier": "Identifier",
+          "displayName": "Identifier",
+          "role": "identifier",
+          "isMultipleValue": false,
+          "position": 0,
+          "displayType": "text",
+          "isMapped": true
+        },
+        {
+          "GUID": "db07d258-f00b-4ed4-9724-f89faf60a160",
+          "columnIdentifier": "Term",
+          "displayName": "Term",
+          "role": "name",
+          "isMultipleValue": false,
+          "position": 1,
+          "displayType": "text",
+          "isMapped": true
+        },
+        {
+          "GUID": "09eeb7d8-7868-4de9-ab14-984f85b41c1b",
+          "columnIdentifier": "Description",
+          "displayName": "Description",
+          "role": "description",
+          "isMultipleValue": false,
+          "position": 2,
+          "displayType": "text",
+          "isMapped": true
+        }
+      ]
+    }
+  ],
+  "businessGlossaryTerms": [
+    {
+      "GUID": "d5c1381a-5476-41b9-82ec-48173da9ab82",
+      "glossaryId": "42b1e5ec-36b4-4c88-a3f7-40c57df1ebcd",
+      "name": "Country Code",
+      "properties": {
+        "82b43ad3-da05-4c09-9e7d-852ea40580b8": "CC",
+        "db07d258-f00b-4ed4-9724-f89faf60a160": "Country Code",
+        "09eeb7d8-7868-4de9-ab14-984f85b41c1b": "This is the code that represents countries"
+      },
+      "refIds": [
+        "80a79cf7-20c1-467b-8475-f0664ffc7845"
+      ],
+      "updatedAt": "2026-11-18T15:31:17.381Z"
+    },
+    {
+      "GUID": "e2c4f625-b7b8-4954-8974-2f2515001e8b",
+      "glossaryId": "42b1e5ec-36b4-4c88-a3f7-40c57df1ebcd",
+      "name": "Country Name",
+      "properties": {
+        "82b43ad3-da05-4c09-9e7d-852ea40580b8": "CN",
+        "db07d258-f00b-4ed4-9724-f89faf60a160": "Country Name",
+        "09eeb7d8-7868-4de9-ab14-984f85b41c1b": "This is the UN agreed name for a country"
+      },
+      "refIds": [
+        "0f5c5d7b-01d6-436d-a664-77bde3ddc7a4"
+      ],
+      "updatedAt": "2026-11-18T15:31:17.381Z"
+    }
+  ],
+  "dbVendor": "Polyglot",
+  "appTarget": "Polyglot",
+  "creationTS": "2026-11-18T13:06:21.561Z",
+  "GUID": "951136ca-1bf3-438b-b38d-dc9edcab052f",
+  "isLineageEnabled": false,
+  "lastModifTS": "2026-11-18T16:32:39.231Z",
+  "persistenceSchemaVersion": "9",
+  "isCreatedByPlugin": true,
+  "pluginInformation": {
+    "pluginName": "Polyglot",
+    "pluginVersion": "0.0.1",
+    "pluginEngineVersion": "1.0.0"
+  },
+  "applicationInformation": {
+    "version": "9.0.0"
+  },
+  "hackoladeMeta": {
+    "validationErrors": {
+      "modelName": false
+    }
+  },
+  "supertypeGroups": [],
+  "settings": {
+    "centralPane": {
+      "dbLevel": {
+        "erd": [
+          {
+            "GUID": "72e35d63-602e-4581-80e4-4ff6f361cc62",
+            "x": 1339,
+            "y": 1296,
+            "width": 301,
+            "height": 96,
+            "color": {
+              "hex": "#2196F3"
+            }
+          },
+          {
+            "GUID": "e54aa180-63a6-498b-8b0a-7c9c4e15b359",
+            "x": 1349,
+            "y": 1185,
+            "width": 250,
+            "height": 86,
+            "color": {
+              "hex": "#2196F3"
+            }
+          },
+          {
+            "GUID": "8060d46e-c54e-4fa1-a613-2c17d77ba447",
+            "x": 1384,
+            "y": 1085,
+            "width": 269,
+            "height": 91,
+            "color": {
+              "hex": "#2196F3"
+            }
+          }
+        ],
+        "erdDefinitions": {
+          "erd": [],
+          "rootPath": [],
+          "entities": [],
+          "decorativeSymbols": []
+        },
+        "buckets": [
+          {
+            "x": 1275,
+            "y": 1021,
+            "GUID": "bc5b89c5-7e3b-43af-9344-6c4121f590d0"
+          }
+        ],
+        "collapsedNodes": [],
+        "activeRelationship": "",
+        "activeRelationshipFields": {
+          "childField": [],
+          "parentField": []
+        },
+        "selectedCollections": [],
+        "displayColorPicker": false,
+        "graphView": {
+          "erd": [
+            {
+              "GUID": "72e35d63-602e-4581-80e4-4ff6f361cc62",
+              "size": 100,
+              "x": 1040,
+              "y": 1040
+            },
+            {
+              "GUID": "e54aa180-63a6-498b-8b0a-7c9c4e15b359",
+              "size": 100,
+              "x": 388,
+              "y": 718
+            },
+            {
+              "GUID": "8060d46e-c54e-4fa1-a613-2c17d77ba447",
+              "size": 100,
+              "x": 424,
+              "y": 295
+            }
+          ],
+          "buckets": [
+            {
+              "x": 1333,
+              "y": 1047,
+              "GUID": "bc5b89c5-7e3b-43af-9344-6c4121f590d0"
+            }
+          ],
+          "decorativeSymbols": [],
+          "forceLayout": true,
+          "defaultLinkLength": 300,
+          "options": []
+        },
+        "diagramViews": [],
+        "decorativeSymbols": [],
+        "nestedCollectionsLayout": "horizontal",
+        "options": [
+          {
+            "autoWidth": false,
+            "autoHeight": false,
+            "GUID": "72e35d63-602e-4581-80e4-4ff6f361cc62"
+          },
+          {
+            "autoWidth": false,
+            "autoHeight": false,
+            "GUID": "8060d46e-c54e-4fa1-a613-2c17d77ba447"
+          }
+        ],
+        "relationshipUpdateDisabled": false
+      },
+      "collectionLevel": {},
+      "changed": false
+    },
+    "dtDiagram": {
+      "collapsedNodes": [],
+      "shouldDistributeCollections": false
+    }
+  }
+}
