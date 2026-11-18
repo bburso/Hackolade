@@ -157,6 +157,86 @@
       "hackoladeMeta": {
         "validationErrors": {}
       }
+    },
+    {
+      "collectionName": "Locally addedd entitiy",
+      "type": "object",
+      "properties": [
+        {
+          "name": "New attribute",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "primaryKey": false,
+          "required": false,
+          "alternateKey": false,
+          "childType": "varchar",
+          "type": "string",
+          "compositeKey": [
+            "compositePrimaryKey",
+            "compositeUniqueKey"
+          ],
+          "compositePrimaryKey": false,
+          "compositeUniqueKey": false,
+          "GUID": "80a79cf7-20c1-467b-8475-f0664ffc7845",
+          "error": {
+            "name": false,
+            "code": false
+          }
+        },
+        {
+          "name": "New attribute1",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "primaryKey": false,
+          "required": false,
+          "alternateKey": false,
+          "childType": "varchar",
+          "type": "string",
+          "compositeKey": [
+            "compositePrimaryKey",
+            "compositeUniqueKey"
+          ],
+          "compositePrimaryKey": false,
+          "compositeUniqueKey": false,
+          "GUID": "0f5c5d7b-01d6-436d-a664-77bde3ddc7a4",
+          "error": {
+            "name": false,
+            "code": false
+          }
+        },
+        {
+          "name": "New attribute2",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "primaryKey": false,
+          "required": false,
+          "alternateKey": false,
+          "childType": "varchar",
+          "type": "string",
+          "compositeKey": [
+            "compositePrimaryKey",
+            "compositeUniqueKey"
+          ],
+          "compositePrimaryKey": false,
+          "compositeUniqueKey": false,
+          "GUID": "57feaf71-925e-45b0-85a9-ae2c74cf33e5",
+          "error": {
+            "name": false,
+            "code": false
+          }
+        }
+      ],
+      "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "bdba0ece-9235-4933-9db8-9cd475e56f28"
+      },
+      "isActivated": true,
+      "additionalProperties": false,
+      "GUID": "8060d46e-c54e-4fa1-a613-2c17d77ba447",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
     }
   ],
   "buckets": [],
@@ -172,7 +252,11 @@
     "e54aa180-63a6-498b-8b0a-7c9c4e15b359": "New entity1",
     "1efe12f4-ecad-4768-a943-9dfce1a37d8f": "New attribute",
     "86edece6-80aa-4161-82e9-ebb03abe93aa": "New attribute1",
-    "e633ac2e-2004-42ed-9a5b-684b1f336937": "New attribute2"
+    "e633ac2e-2004-42ed-9a5b-684b1f336937": "New attribute2",
+    "8060d46e-c54e-4fa1-a613-2c17d77ba447": "Locally addedd entitiy",
+    "80a79cf7-20c1-467b-8475-f0664ffc7845": "New attribute",
+    "0f5c5d7b-01d6-436d-a664-77bde3ddc7a4": "New attribute1",
+    "57feaf71-925e-45b0-85a9-ae2c74cf33e5": "New attribute2"
   },
   "definitions": {
     "type": "definitions",
@@ -198,7 +282,7 @@
   "creationTS": "2026-11-18T13:06:21.561Z",
   "GUID": "951136ca-1bf3-438b-b38d-dc9edcab052f",
   "isLineageEnabled": false,
-  "lastModifTS": "2026-11-18T13:50:37.598Z",
+  "lastModifTS": "2026-11-18T14:03:33.309Z",
   "persistenceSchemaVersion": "9",
   "isCreatedByPlugin": true,
   "pluginInformation": {
@@ -228,6 +312,16 @@
             "GUID": "e54aa180-63a6-498b-8b0a-7c9c4e15b359",
             "x": 1421,
             "y": 1362,
+            "width": 217,
+            "height": 86,
+            "color": {
+              "hex": "#2196F3"
+            }
+          },
+          {
+            "GUID": "8060d46e-c54e-4fa1-a613-2c17d77ba447",
+            "x": 1643,
+            "y": 1135,
             "width": 217,
             "height": 86,
             "color": {
@@ -263,6 +357,12 @@
               "size": 100,
               "x": 388,
               "y": 718
+            },
+            {
+              "GUID": "8060d46e-c54e-4fa1-a613-2c17d77ba447",
+              "size": 100,
+              "x": 424,
+              "y": 295
             }
           ],
           "buckets": [],
