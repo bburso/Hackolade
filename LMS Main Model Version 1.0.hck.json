@@ -28545,7 +28545,9 @@
           "compositeUniqueKey": []
         }
       ],
-      "hackoladeMeta": {},
+      "hackoladeMeta": {
+        "validationErrors": {}
+      },
       "primaryKey": [
         {
           "GUID": "1680b369-b773-4c40-aa48-ef8474b8fb25",
@@ -106200,7 +106202,9 @@
           ]
         }
       ],
-      "hackoladeMeta": {},
+      "hackoladeMeta": {
+        "validationErrors": {}
+      },
       "description": "Stores a users progress against a component on a course at a point in time. "
     },
     {
@@ -120904,7 +120908,9 @@
         }
       ],
       "selectStatement": "Loading Fact\n\nfor each new record in dim_learning_path_booking\nbegin\n load the fact record using the values from the latest dim_learning_path_booking as below\n\nFor ALL dim_ids (except cd_dim_learning_path_booking_id -this is the defining dimension of the table )  if a row can't be found in the dimension tables based on the where clauses listed below   then populate with the string 'Unknown'\n\n   cd_dim_learning_path_booking_id  - from cd_dim_learning_path_booking_id in dim_learning_path_booking\n\n   cd_dim_learning_path_id - latest cd_dim_learning_path_id from dim_learning_path where dim_learning_path_booking.cd_learning_path_id = dim_learning_path.cd_learning_path_id\n   cd_dim_student_id - latest cd_dim_student_id from dim_student where dim_learning_path_booking.cd_individual_id = dim_student.cd_individual_id  (we need to bring it from dim_individual)\n\n   cd_dim_organization_id - latest  cd_dim_organization_id from dim_organization where dim_learning_path_booking.cd_individual_id = dim_student.cd_individual_id and dim_student.cd_individual_id = dim_individual.cd_individual_id and dim_individual.cd_organization_id = dim_organization.cd_organization_id\n\n   dt_valid_from  - current datetime\n   dt_valid_to  - NULL \n   is_current - TRUE\n\nFrom dim_learning_path_booking the following fields:\ndt_imc_booking_date\ndt_imc_user_personal_start_date\ndt_imc_user_personal_end_date\nni_mandatory_course_templates_completed\nni_elective_course_templates_completed\nnb_learning_path_mandatory_progress\nnb_learning_path_elective_progress\nnb_learning_path_overall_progress\ndt_learning_path_start_date\ndt_learning_path_end_date\nde_learning_path_booking_status\nni_learning_path_months_taken\nni_learning_path_days_taken\nde_imc_learning_path_booking_status\nnb_imc_progress\n\nNOTES:\n\n- We will need to the (cd_individual_id, cd_learning_path_id) as an anchor for the facts\n\n- Once the dim IDs were selected using the logic above -> if the combination already exists for the\n   cd_booking_id UPDATE otherwise CREATE a new record \n\n- If a new record is created the previous one is_current needs to be set to false and 'Valid To' to be filled with\n the date of the loading",
-      "hackoladeMeta": {},
+      "hackoladeMeta": {
+        "validationErrors": {}
+      },
       "description": "Stores the progress against a learning path booking at a point in time."
     },
     {
@@ -121965,7 +121971,9 @@
       "stageCopyOptions": {
         "GUID": "338bd10b-400c-45ef-9fb5-27eee734901a"
       },
-      "hackoladeMeta": {},
+      "hackoladeMeta": {
+        "validationErrors": {}
+      },
       "description": "Stores the course progress against a learning path booking at a point in time."
     },
     {
@@ -122344,7 +122352,9 @@
         }
       ],
       "selectStatement": "Loading Fact\n\nfor each new record in st_imc_user_login\nbegin\n load the fact record using the values from the latest fact_user_login as below\n\nFor ALL dim_ids  if a row can't be found in the dimension tables based on the where clauses listed below   then populate with the string 'Unknown'\n\n\ncd_dim_individual_id - latest cd_dim_individual_id in dim_individual where st_imc_user_login.cd_individual_id = dim_individual.cd_individual_id\n\nThe following fields will come directly form the st_imc_user_login and will have the same name\ndt_login_time\nde_login_type\n\nNOTES:\n\n- We will need to the (cd_individual_id, dt_login_time) as an anchor for the facts\n\n- Once the dim IDs were selected using the logic above -> if the combination already exists for the(cd_individual_id, dt_login_time) UPDATE otherwise CREATE a new record \n\n- If a new record is created the previous one is_current needs to be set to false and 'Valid To' to be filled with\n the date of the loading\n\n\n\nis_day_record\n\nThis is used to flag if this dimension record is the one to use for the day(s).   We want to use the records that cover the close/end of a day.      Where the range spans days then the flag will refer to all the days from the 'valid from' date to the  'valid end' date - 1.\nExample:\nRecord 1 : valid from 06 07 2026 9:00   valid to 07 07 2026 09:00    \nwill flag this is the day record for 06 07 2026     is_day_record - true\n\nRecord 2: valid from 07 07 2026 9:00   valid to 07 07 2026 12:30\nthis will not be flagged as a day record.            is_day_record - false\n\nRecord3 : valid from 07 07 2026 12:30   valid to 09 07 2026 12:30    \nwill flag this is the day record for  07 07 2026  and 08 07 2026     is_day_record - true   \n\nDiscussed possible process:\nis_day_record = (date(valid_to) > date(valid_from)) OR (valid_from = the latest valid_from for that key)\n\n\nIf a dimension is soft closed for the day (is_day_record = False)   then we need to add to the processing a step to update the is_day_record  in ANY fact table row with that soft closed dimension in them.",
-      "hackoladeMeta": {},
+      "hackoladeMeta": {
+        "validationErrors": {}
+      },
       "description": "Stores the Login Times of an Individual at a point in time"
     },
     {
@@ -131563,7 +131573,9 @@
         }
       ],
       "selectStatement": "Loading Fact\n\nfor each new record in dim_user_exam_question\nbegin\n load the fact record using the values from the latest dim_user_exam_question as below\n\nFor ALL dim_ids (except cd_dim_user_exam_question_id - this is the defining dimension of the table )  if a row can't be found in the dimension tables based on the where clauses listed below   then populate with the string 'Unknown'\n\ncd_dim_user_exam_question_id -  cd_dim_user_exam_question_id from dim_user_exam_question\ncd_dim_booking_id - latest cd_dim_booking_id from dim_booking where dim_user_exam_question.cd_individual_id = dim_booking.cd_booking_candidate_person_id AND dim_user_exam_question.cd_course_id=  dim_booking.cd_course_id AND dim_booking.is_reserved = False\ncd_dim_course_id - latest cd_dim_course_id from dim_course where dim_user_exam_question.cd_course_id = dim_course.cd_course_id\ncd_dim_exam_id - latest cd_dim_exam_id from dim_exam where dim_user_exam_question.cd_exam_id = dim_exam.cd_exam_id\ncd_dim_exam_booking_id - latest cd_dim_exam_booking_id from dim_exam_booking where dim_user_exam_question.cd_individual_id = dim_exam_booking.cd_individual_id AND dim_user_exam_question.cd_exam_id= dim_exam_booking.cd_exam_id AND dim_user_exam_question.ni_exam_booking_attempt = dim_exam_booking.ni_exam_booking_attempt AND dim_user_exam_question.cd_course_id=  dim_exam_booking.cd_course_id\ncd_dim_student_id - latest cd_dim_student_id from dim_student where dim_user_exam_question.cd_individual_id = dim_student.cd_individual_id \ncd_dim_course_exam_id - latest cd_dim_course_exam_id from dim_course_exam where dim_user_exam_question.cd_individual_id = dim_exam_booking.cd_individual_id AND dim_user_exam_question.cd_exam_id= dim_exam_booking.cd_exam_id AND dim_user_exam_question.ni_exam_booking_attempt = dim_exam_booking.ni_exam_booking_attempt AND dim_user_exam_question.cd_course_id=  dim_exam_booking.cd_course_id and dim_exam_booking.cd_course_exam_id = dim_course_exam.cd_course_exam_id\ncd_dim_course_template_id - latest cd_dim_course_template_id from dim_course_template where dim_user_exam_question.cd_course_id = dim_course.cd_course_id and dim_course.cd_template_object_id = dim_course_template.cd_course_template_object_id \ncd_dim_organization_id - latest cd_dim_organization_id from dim_organization where dim_user_exam_question.cd_individual_id = dim_individual.cd_individual_id and dim_individual.cd_organization_id = dim_organization.cd_individual_id\ncd_dim_token_id - latest cd_dim_token_id from dim_token where dim_user_exam_question.cd_individual_id = dim_booking.cd_booking_candidate_person_id AND dim_user_exam_question.cd_course_id=  dim_booking.cd_course_id AND dim_booking.is_reserved = False and dim_booking.cd_token_id = dim_token.cd_token_id\ncd_dim_token_organization_id -  latest cd_dim_organization_id from dim_organization where dim_user_exam_question.cd_individual_id = dim_booking.cd_booking_candidate_person_id AND dim_user_exam_question.cd_course_id=  dim_booking.cd_course_id AND dim_booking.is_reserved = False and dim_booking.cd_token_id = dim_token.cd_token_id and dim_token.cd_organization_id = dim_organization.cd_organization_id\ncd_dim_venue_id - latest cd_dim_venue_id from dim_venuewhere dim_user_exam_question.cd_course_id = dim_course.cd_course_id and dim_course.cd_venue_id = dim_venue.cd_venue_id\ncd_dim_orderer_id -  latest cd_dim_orderer_id from dim_orderer where dim_user_exam_question.cd_individual_id = dim_booking.cd_booking_candidate_person_id AND dim_user_exam_question.cd_course_id=  dim_booking.cd_course_id AND dim_booking.is_reserved = False and dim_booking.cd_orderer_id = dim_orderer.cd_individual_id\ncd_dim_order_id - latest cd_dim_order_id from dim_order where dim_user_exam_question.cd_individual_id = dim_booking.cd_booking_candidate_person_id AND dim_user_exam_question.cd_course_id=  dim_booking.cd_course_id AND dim_booking.is_reserved = False and dim_booking.de_order_number = dim_order.de_order_number\ncd_dim_token_holder_id - latest cd_dim_token_holder_id from dim_token_holder  where dim_user_exam_question.cd_individual_id = dim_booking.cd_booking_candidate_person_id AND dim_user_exam_question.cd_course_id=  dim_booking.cd_course_id AND dim_booking.is_reserved = False and dim_booking.cd_token_holder_id = dim_token_holder.cd_individual_id\ncd_dim_question_id - latest cd_dim_question_id from dim_question where dim_user_exam_question.cd_question_id = dim_question.cd_question_id\n\nni_exam_booking_attempt - dim_user_exam_question.ni_exam_booking_attempt\nde_user_exam_question_status - dim_user_exam_question.de_user_exam_question_status\nnb_points_achieved - dim_user_exam_question.nb_points_achieved\nde_user_exam_question_access_status - dim_user_exam_question.de_user_exam_question_access_status\ndt_user_exam_question_evaluation_date - dim_user_exam_question.dt_user_exam_question_evaluation_date\n \n\nNOTES:\n\n- We will need to the (cd_individual_id, cd_course_id, cd_exam_id, ni_exam_booking_attempt, cd_question_id) as an anchor for the facts\n\n- Once the dim IDs were selected using the logic above -> if the combination already exists for the\n   (cd_individual_id, cd_course_id, cd_exam_id, ni_exam_booking_attempt, cd_question_id) UPDATE otherwise CREATE a new record \n\n- If a new record is created the previous one is_current needs to be set to false and 'Valid To' to be filled with\n the date of the loading\n\n\nis_day_record\n\n\nThis is used to flag if this dimension record is the one to use for the day(s).   We want to use the records that cover the close/end of a day.      Where the range spans days then the flag will refer to all the days from the 'valid from' date to the  'valid end' date - 1.\nExample:\nRecord 1 : valid from 06 07 2026 9:00   valid to 07 07 2026 09:00    \nwill flag this is the day record for 06 07 2026     is_day_record - true\n\nRecord 2: valid from 07 07 2026 9:00   valid to 07 07 2026 12:30\nthis will not be flagged as a day record.            is_day_record - false\n\nRecord3 : valid from 07 07 2026 12:30   valid to 09 07 2026 12:30    \nwill flag this is the day record for  07 07 2026  and 08 07 2026     is_day_record - true   \n\nDiscussed possible process:\nis_day_record = (date(valid_to) > date(valid_from)) OR (valid_from = the latest valid_from for that key)\n\n\nIf a dimension is soft closed for the day (is_day_record = False)   then we need to add to the processing a step to update the is_day_record  in ANY fact table row with that soft closed dimension in them.",
-      "hackoladeMeta": {},
+      "hackoladeMeta": {
+        "validationErrors": {}
+      },
       "description": "Stores the questions an individual interacted with in an exam at a point in time"
     },
     {
@@ -132658,7 +132670,9 @@
         }
       ],
       "selectStatement": "Loading Fact\n\nfor each new record in st_imc_user_exam_question_answer\nbegin\n load the fact record using the values from the latest st_imc_user_exam_question_answer as below\n\nFor ALL dim_ids  if a row can't be found in the dimension tables based on the where clauses listed below   then populate with the string 'Unknown'\n\ncd_dim_user_exam_question_id - latest cd_dim_user_exam_question_id from dim_user_exam_question where st_imc_user_exam_question_answer.cd_individual_id = dim_user_exam_question.cd_individual_id and st_imc_user_exam_question_answer.cd_course_id = dim_user_exam_question.cd_course_id and st_imc_user_exam_question_answer.cd_exam_id = dim_user_exam_question.cd_exam_id and st_imc_user_exam_question_answer.ni_exam_booking_attempt = dim_user_exam_question.ni_exam_booking_attempt and st_imc_user_exam_question_answer.cd_question_id = dim_user_exam_question.cd_question_id\n\ncd_dim_booking_id - latest cd_dim_booking_id from dim_booking where st_imc_user_exam_question_answer.cd_individual_id = dim_booking.cd_booking_candidate_person_id AND st_imc_user_exam_question_answer.cd_course_id=  dim_booking.cd_course_id AND dim_booking.is_reserved = False\ncd_dim_course_id - latest cd_dim_course_id from dim_course where st_imc_user_exam_question_answer.cd_course_id = dim_course.cd_course_id\ncd_dim_exam_id - latest cd_dim_exam_id from dim_exam where st_imc_user_exam_question_answer.cd_exam_id = dim_exam.cd_exam_id\ncd_dim_exam_booking_id - latest cd_dim_exam_booking_id from dim_exam_booking where st_imc_user_exam_question_answer.cd_individual_id = dim_exam_booking.cd_individual_id AND st_imc_user_exam_question_answer.cd_exam_id= dim_exam_booking.cd_exam_id AND st_imc_user_exam_question_answer.ni_exam_booking_attempt = dim_exam_booking.ni_exam_booking_attempt AND st_imc_user_exam_question_answer.cd_course_id=  dim_exam_booking.cd_course_id\ncd_dim_student_id - latest cd_dim_student_id from dim_student where st_imc_user_exam_question_answer.cd_individual_id = dim_student.cd_individual_id \ncd_dim_course_exam_id - latest cd_dim_course_exam_id from dim_course_exam where st_imc_user_exam_question_answer.cd_individual_id = dim_exam_booking.cd_individual_id AND st_imc_user_exam_question_answer.cd_exam_id= dim_exam_booking.cd_exam_id AND st_imc_user_exam_question_answer.ni_exam_booking_attempt = dim_exam_booking.ni_exam_booking_attempt AND st_imc_user_exam_question_answer.cd_course_id=  dim_exam_booking.cd_course_id and dim_exam_booking.cd_course_exam_id = dim_course_exam.cd_course_exam_id\ncd_dim_course_template_id - latest cd_dim_course_template_id from dim_course_template where st_imc_user_exam_question_answer.cd_course_id = dim_course.cd_course_id and dim_course.cd_template_object_id = dim_course_template.cd_course_template_object_id \ncd_dim_organization_id - latest cd_dim_organization_id from dim_organization where st_imc_user_exam_question_answer.cd_individual_id = dim_individual.cd_individual_id and dim_individual.cd_organization_id = dim_organization.cd_individual_id\ncd_dim_token_id - latest cd_dim_token_id from dim_token where st_imc_user_exam_question_answer.cd_individual_id = dim_booking.cd_booking_candidate_person_id AND st_imc_user_exam_question_answer.cd_course_id=  dim_booking.cd_course_id AND dim_booking.is_reserved = False and dim_booking.cd_token_id = dim_token.cd_token_id\ncd_dim_token_organization_id -  latest cd_dim_organization_id from dim_organization where st_imc_user_exam_question_answer.cd_individual_id = dim_booking.cd_booking_candidate_person_id AND st_imc_user_exam_question_answer.cd_course_id=  dim_booking.cd_course_id AND dim_booking.is_reserved = False and dim_booking.cd_token_id = dim_token.cd_token_id and dim_token.cd_organization_id = dim_organization.cd_organization_id\ncd_dim_venue_id - latest cd_dim_venue_id from dim_venuewhere st_imc_user_exam_question_answer.cd_course_id = dim_course.cd_course_id and dim_course.cd_venue_id = dim_venue.cd_venue_id\ncd_dim_orderer_id -  latest cd_dim_orderer_id from dim_orderer where st_imc_user_exam_question_answer.cd_individual_id = dim_booking.cd_booking_candidate_person_id AND st_imc_user_exam_question_answer.cd_course_id=  dim_booking.cd_course_id AND dim_booking.is_reserved = False and dim_booking.cd_orderer_id = dim_orderer.cd_individual_id\ncd_dim_order_id - latest cd_dim_order_id from dim_order where st_imc_user_exam_question_answer.cd_individual_id = dim_booking.cd_booking_candidate_person_id AND st_imc_user_exam_question_answer.cd_course_id=  dim_booking.cd_course_id AND dim_booking.is_reserved = False and dim_booking.de_order_number = dim_order.de_order_number\ncd_dim_token_holder_id - latest cd_dim_token_holder_id from dim_token_holder  where st_imc_user_exam_question_answer.cd_individual_id = dim_booking.cd_booking_candidate_person_id AND st_imc_user_exam_question_answer.cd_course_id=  dim_booking.cd_course_id AND dim_booking.is_reserved = False and dim_booking.cd_token_holder_id = dim_token_holder.cd_individual_id\ncd_dim_question_id - latest cd_dim_question_id from dim_question where st_imc_user_exam_question_answer.cd_question_id = dim_question.cd_question_id\ncd_response_id - st_imc_user_exam_question_answer.cd_response_id\n\nde_user_exam_question_response_access_status - st_imc_user_exam_question_answer.de_user_exam_question_response_access_status\nde_user_exam_question_response_status - st_imc_user_exam_question_answer.de_user_exam_question_response_status\nde_question_answer_response - st_imc_user_exam_question_answer.de_question_answer_response\ndt_question_answer_evaluation_date - st_imc_user_exam_question_answer.dt_question_answer_evaluation_date\n \n\nNOTES:\n\n- We will need to the (cd_individual_id, cd_course_id, cd_exam_id, ni_exam_booking_attempt, cd_question_id, cd_response_id) as an anchor for the facts\n\n- Once the dim IDs were selected using the logic above -> if the combination already exists for the\n   (cd_individual_id, cd_course_id, cd_exam_id, ni_exam_booking_attempt, cd_question_id, cd_response_id) UPDATE otherwise CREATE a new record \n\n- If a new record is created the previous one is_current needs to be set to false and 'Valid To' to be filled with\n the date of the loading\n\n\nis_day_record\n\n\nThis is used to flag if this dimension record is the one to use for the day(s).   We want to use the records that cover the close/end of a day.      Where the range spans days then the flag will refer to all the days from the 'valid from' date to the  'valid end' date - 1.\nExample:\nRecord 1 : valid from 06 07 2026 9:00   valid to 07 07 2026 09:00    \nwill flag this is the day record for 06 07 2026     is_day_record - true\n\nRecord 2: valid from 07 07 2026 9:00   valid to 07 07 2026 12:30\nthis will not be flagged as a day record.            is_day_record - false\n\nRecord3 : valid from 07 07 2026 12:30   valid to 09 07 2026 12:30    \nwill flag this is the day record for  07 07 2026  and 08 07 2026     is_day_record - true   \n\nDiscussed possible process:\nis_day_record = (date(valid_to) > date(valid_from)) OR (valid_from = the latest valid_from for that key)\n\n\nIf a dimension is soft closed for the day (is_day_record = False)   then we need to add to the processing a step to update the is_day_record  in ANY fact table row with that soft closed dimension in them.",
-      "hackoladeMeta": {},
+      "hackoladeMeta": {
+        "validationErrors": {}
+      },
       "description": "Stores the Question Responses/Answers from an User on an Exam at a point in time\n\nAs defined by:\ncd_dim_student_id\ncd_dim_exam_id\ncd_dim_question_id\ncd_dim_question_answer_id"
     },
     {
@@ -133573,7 +133587,9 @@
       "additionalProperties": false,
       "external": false,
       "bucketId": "5ef82bd2-e0b8-42cb-9823-ac73031468d6",
-      "hackoladeMeta": {},
+      "hackoladeMeta": {
+        "validationErrors": {}
+      },
       "primaryKey": [
         {
           "GUID": "4a1fc344-c946-4d82-882b-0d5a6c1b6146",
@@ -134778,7 +134794,9 @@
         }
       ],
       "selectStatement": "Loading Fact\n\nfor each new record in st_imc_user_exam_competency\nbegin\n load the fact record using the values from the latest st_imc_user_exam_competency as below\n\nFor ALL dim_ids if a row can't be found in the dimension tables based on the where clauses listed below   then populate with the string 'Unknown'\n\ncd_dim_exam_booking_id - latest cd_dim_exam_booking_id from dim_exam_booking where st_imc_user_exam_competency.cd_individual_id = dim_exam_booking.cd_individual_id AND st_imc_user_exam_competency.cd_exam_id= dim_exam_booking.cd_exam_id AND st_imc_user_exam_competency.ni_exam_booking_attempt = dim_exam_booking.ni_exam_booking_attempt AND st_imc_user_exam_competency.cd_course_id=  dim_exam_booking.cd_course_id\ncd_dim_booking_id - latest cd_dim_booking_id from dim_booking where st_imc_user_exam_competency.cd_individual_id = dim_booking.cd_booking_candidate_person_id AND st_imc_user_exam_competency.cd_course_id=  dim_booking.cd_course_id AND dim_booking.is_reserved = False\ncd_dim_course_id - latest cd_dim_course_id from dim_course where st_imc_user_exam_competency.cd_course_id = dim_course.cd_course_id\ncd_dim_exam_id - latest cd_dim_exam_id from dim_exam where st_imc_user_exam_competency.cd_exam_id = dim_exam.cd_exam_id\ncd_dim_student_id - latest cd_dim_student_id from dim_student where st_imc_user_exam_competency.cd_individual_id = dim_student.cd_individual_id \ncd_dim_course_exam_id - latest cd_dim_course_exam_id from dim_course_exam where st_imc_user_exam_competency.cd_individual_id = dim_exam_booking.cd_individual_id AND st_imc_user_exam_competency.cd_exam_id= dim_exam_booking.cd_exam_id AND st_imc_user_exam_competency.ni_exam_booking_attempt = dim_exam_booking.ni_exam_booking_attempt AND st_imc_user_exam_competency.cd_course_id=  dim_exam_booking.cd_course_id and dim_exam_booking.cd_course_exam_id = dim_course_exam.cd_course_exam_id\ncd_dim_course_template_id - latest cd_dim_course_template_id from dim_course_template where st_imc_user_exam_competency.cd_course_id = dim_course.cd_course_id and dim_course.cd_template_object_id = dim_course_template.cd_course_template_object_id \ncd_dim_organization_id - latest cd_dim_organization_id from dim_organization where st_imc_user_exam_competency.cd_individual_id = dim_individual.cd_individual_id and dim_individual.cd_organization_id = dim_organization.cd_individual_id\ncd_dim_token_id - latest cd_dim_token_id from dim_token where st_imc_user_exam_competency.cd_individual_id = dim_booking.cd_booking_candidate_person_id AND st_imc_user_exam_competency.cd_course_id=  dim_booking.cd_course_id AND dim_booking.is_reserved = False and dim_booking.cd_token_id = dim_token.cd_token_id\ncd_dim_token_organization_id -  latest cd_dim_organization_id from dim_organization where st_imc_user_exam_competency.cd_individual_id = dim_booking.cd_booking_candidate_person_id AND st_imc_user_exam_competency.cd_course_id=  dim_booking.cd_course_id AND dim_booking.is_reserved = False and dim_booking.cd_token_id = dim_token.cd_token_id and dim_token.cd_organization_id = dim_organization.cd_organization_id\ncd_dim_venue_id - latest cd_dim_venue_id from dim_venuewhere st_imc_user_exam_competency.cd_course_id = dim_course.cd_course_id and dim_course.cd_venue_id = dim_venue.cd_venue_id\ncd_dim_orderer_id -  latest cd_dim_orderer_id from dim_orderer where st_imc_user_exam_competency.cd_individual_id = dim_booking.cd_booking_candidate_person_id AND st_imc_user_exam_competency.cd_course_id=  dim_booking.cd_course_id AND dim_booking.is_reserved = False and dim_booking.cd_orderer_id = dim_orderer.cd_individual_id\ncd_dim_order_id - latest cd_dim_order_id from dim_order where st_imc_user_exam_competency.cd_individual_id = dim_booking.cd_booking_candidate_person_id AND st_imc_user_exam_competency.cd_course_id=  dim_booking.cd_course_id AND dim_booking.is_reserved = False and dim_booking.de_order_number = dim_order.de_order_number\ncd_dim_token_holder_id - latest cd_dim_token_holder_id from dim_token_holder  where st_imc_user_exam_competency.cd_individual_id = dim_booking.cd_booking_candidate_person_id AND st_imc_user_exam_competency.cd_course_id=  dim_booking.cd_course_id AND dim_booking.is_reserved = False and dim_booking.cd_token_holder_id = dim_token_holder.cd_individual_id\ncd_dim_competency_id - latest cd_dim_classification_id from dim_classification where st_imc_user_exam_competency.cd_competency_id = dim_classification.cd_classification_id\n\nnb_user_exam_competency_points_achieved - st_imc_user_exam_competency.nb_user_exam_competency_points_achieved\nnb_user_exam_competency_points_max - st_imc_user_exam_competency.nb_user_exam_competency_points_max\nnb_user_exam_competency_points_percentage - st_imc_user_exam_competency.nb_user_exam_competency_points_percentage\nnb_user_exam_competency_achieved - st_imc_user_exam_competency.nb_user_exam_competency_achieved\nnb_user_exam_competency_max - st_imc_user_exam_competency.nb_user_exam_competency_max\nnb_user_exam_competency_percentage - st_imc_user_exam_competency.nb_user_exam_competency_percentage\ndt_user_exam_evaluation_date - st_imc_user_exam_competency.dt_user_exam_evaluation_date\n\nNOTES:\n\n- We will need to the (cd_individual_id, cd_course_id, cd_exam_id, ni_exam_booking_attempt, cd_competency_id) as an anchor for the facts\n\n- Once the dim IDs were selected using the logic above -> if the combination already exists for the (cd_individual_id, cd_course_id, cd_exam_id, ni_exam_booking_attempt, cd_competency_id) UPDATE otherwise CREATE a new record \n\n- If a new record is created the previous one is_current needs to be set to false and 'Valid To' to be filled with\n the date of the loading\n\n\nis_day_record\n\n\nThis is used to flag if this dimension record is the one to use for the day(s).   We want to use the records that cover the close/end of a day.      Where the range spans days then the flag will refer to all the days from the 'valid from' date to the  'valid end' date - 1.\nExample:\nRecord 1 : valid from 06 07 2026 9:00   valid to 07 07 2026 09:00    \nwill flag this is the day record for 06 07 2026     is_day_record - true\n\nRecord 2: valid from 07 07 2026 9:00   valid to 07 07 2026 12:30\nthis will not be flagged as a day record.            is_day_record - false\n\nRecord3 : valid from 07 07 2026 12:30   valid to 09 07 2026 12:30    \nwill flag this is the day record for  07 07 2026  and 08 07 2026     is_day_record - true   \n\nDiscussed possible process:\nis_day_record = (date(valid_to) > date(valid_from)) OR (valid_from = the latest valid_from for that key)\n\n\nIf a dimension is soft closed for the day (is_day_record = False)   then we need to add to the processing a step to update the is_day_record  in ANY fact table row with that soft closed dimension in them.",
-      "hackoladeMeta": {},
+      "hackoladeMeta": {
+        "validationErrors": {}
+      },
       "description": "Stores the Competencies Result obtained by an User in an exam booking at a point in time\n\nAs defined by:\ncd_dim_student_id\ncd_dim_exam_id\ncd_dim_classification_id "
     },
     {
@@ -136289,7 +136307,9 @@
         }
       ],
       "selectStatement": "Loading Fact\n\nfor each new record in dim_user_skill\nbegin\n load the fact record using the values from the latest dim_user_skill as below\n\nFor ALL dim_ids (except cd_dim_user_skill_id -this is the defining dimension of the table )  if a row can't be found in the dimension tables based on the where clauses listed below   then populate with the string 'Unknown'\n\ncd_dim_user_skill_id - from cd_dim_user_skill_id in dim_user_skill\ncd_dim_skill_id - latest cd_dim_skill_id from dim_skill where dim_user_skill.cd_skill_id = dim_skill.cd_skill_id\ncd_dim_individual_id - latest cd_dim_individual_id from dim_individual where dim_user_skill.cd_individual_id = dim_individual.cd_individual_id\ncd_dim_organization_id - latest cd_dim_organization_id from dim_organization where dim_user_skill.cd_individual_id = dim_individual.cd_individual_id and dim_individual.cd_organization_id = dim_organization.cd_organization_id\ncd_dim_course_id - latest cd_dim_course_id from dim_course wher dim_user_skill.cd_last_course_id = dim_course.cd_course_id\ncd_dim_course_template_id - latest cd_dim_course_template_id from dim_course_template where dim_user_skill.cd_last_course_id = dim_course.cd_course_id and dim_course.cd_template_object_id = dim_course_template.cd_course_template_object_id\ncd_dim_venue_id - latest cd_dim_venue_id from dim_venue where dim_user_skill.cd_last_course_id = dim_course.cd_course_id and dim_course.cd_venue_id = dim_venue.cd_venue_id\ndt_valid_from  - current datetime\ndt_valid_to  - NULL \nis_current - TRUE\n\n\ndt_skill_aquired_at - dim_user_skill.dt_skill_aquired_at\ndt_user_skill_expiry_date - dim_user_skill.dt_user_skill_expiry_date\nis_scheduled_to_expire - dim_user_skill.is_scheduled_to_expire \nni_days_to_expiry - the difference between dt_user_skill_expiry_date and today's date\n\n\nNOTES:\n\n- We will need to the (cd_individual_id, cd_skill_id) as an anchor for the facts\n\n- Once the dim IDs were selected using the logic above -> if the combination already exists for the\n   cd_booking_id UPDATE otherwise CREATE a new record \n\n- If a new record is created the previous one is_current needs to be set to false and 'Valid To' to be filled with\n the date of the loading",
-      "hackoladeMeta": {},
+      "hackoladeMeta": {
+        "validationErrors": {}
+      },
       "description": "Stores the skill of an individual at a point in time"
     },
     {
@@ -141416,6 +141436,113 @@
         }
       ],
       "selectStatement": "loading logic\n\nuse the (cd_question_id, cd_response_id) in st_imc_question_answer\n  \nGet the latest loaded but not processed records.\n\nFor every record in the staging table that has not been processed\ndo \n   Compare each record to the latest matching cd_booking_id in the dim_booking table.     \n  \n   if there is a record\n    then\n        if any of the following columns are different   \n        then  \n            create a new dim record in this [dim table]   \n            with a unique dim id (pk) and \n            set the 'dt_valid_from' to current date time\n            set the 'dt_valid_to' to 'NULL'  \n            set 'is_current'  to 'true'    \n            update existing current record  \n                  set 'is_current' to 'false'\n                  update the 'dt_valid_to' to  current date.    \n        else\n           update any other columns that are different in the current active dim record. \n    end     \n   Else  -- there isn't an exsiting record\n    then \n      create a new dim record  setting the \n      'dt_valid_from' to current data time  and\n      set the 'dt_valid_to' to 'NULL'     and\n      set 'is_current'  to 'true'    \n    end\n\n   for staging records processed \n     update the 'processed date' in the records processed  in the staging table.  \n\nEnd  -- of for\n\n\n\n*****\n\nCheck and process for any deletions\n        ( Standard fix when there's no delete event: detect deletes by absence)\n        For every new record processed .  check if the newly processed staging record is missing a \n        (cd_question_id, cd_response_id) record that previously existed .  If so  then perform a soft delete on the existing\n\ncd_dim_question_id - get the latest cd_dim_question_id from dim_question where st_imc_question_answer.cd_question_id = dim_question.cd_question_id\n\nis_day_record\n\n\nThis is used to flag if this dimension record is the one to use for the day(s).   We want to use the records that cover the close/end of a day.      Where the range spans days then the flag will refer to all the days from the 'valid from' date to the  'valid end' date - 1.\nExample:\nRecord 1 : valid from 06 07 2026 9:00   valid to 07 07 2026 09:00    \nwill flag this is the day record for 06 07 2026     is_day_record - true\n\nRecord 2: valid from 07 07 2026 9:00   valid to 07 07 2026 12:30\nthis will not be flagged as a day record.            is_day_record - false\n\nRecord3 : valid from 07 07 2026 12:30   valid to 09 07 2026 12:30    \nwill flag this is the day record for  07 07 2026  and 08 07 2026     is_day_record - true   \n\nDiscussed possible process:\nis_day_record = (date(valid_to) > date(valid_from)) OR (valid_from = the latest valid_from for that key)\n\n\nIf a dimension is soft closed for the day (is_day_record = False)   then we need to add to the processing a step to update the is_day_record  in ANY fact table row with that soft closed dimension in them."
+    },
+    {
+      "collectionName": "TEST on local",
+      "type": "object",
+      "properties": [
+        {
+          "name": "New column",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "autoincrement": {
+            "step_num": 1
+          },
+          "tPrecision": 9,
+          "primaryKey": false,
+          "required": false,
+          "alternateKey": false,
+          "childType": "varchar",
+          "type": "string",
+          "compositeKey": [
+            "clusteringKey",
+            "partitioningKey",
+            "compositePrimaryKey",
+            "compositeUniqueKey"
+          ],
+          "clusteringKey": false,
+          "partitioningKey": false,
+          "compositePrimaryKey": false,
+          "compositeUniqueKey": false,
+          "GUID": "3ce8447c-d1c2-4f84-ade5-cb8646f5fe0d",
+          "error": {
+            "name": false,
+            "code": false
+          }
+        },
+        {
+          "name": "New column1",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "autoincrement": {
+            "step_num": 1
+          },
+          "tPrecision": 9,
+          "primaryKey": false,
+          "required": false,
+          "alternateKey": false,
+          "childType": "varchar",
+          "type": "string",
+          "compositeKey": [
+            "clusteringKey",
+            "partitioningKey",
+            "compositePrimaryKey",
+            "compositeUniqueKey"
+          ],
+          "clusteringKey": false,
+          "partitioningKey": false,
+          "compositePrimaryKey": false,
+          "compositeUniqueKey": false,
+          "GUID": "5f40e720-7713-4188-ae97-427191dc4fd8",
+          "error": {
+            "name": false,
+            "code": false
+          }
+        },
+        {
+          "name": "New column2",
+          "hackoladeMeta": {},
+          "isActivated": true,
+          "autoincrement": {
+            "step_num": 1
+          },
+          "tPrecision": 9,
+          "primaryKey": false,
+          "required": false,
+          "alternateKey": false,
+          "childType": "varchar",
+          "type": "string",
+          "compositeKey": [
+            "clusteringKey",
+            "partitioningKey",
+            "compositePrimaryKey",
+            "compositeUniqueKey"
+          ],
+          "clusteringKey": false,
+          "partitioningKey": false,
+          "compositePrimaryKey": false,
+          "compositeUniqueKey": false,
+          "GUID": "3e8df9a0-89b2-49c2-b771-12daccee249c",
+          "error": {
+            "name": false,
+            "code": false
+          }
+        }
+      ],
+      "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "9985bc88-f7ae-46d1-af19-073239f5011c"
+      },
+      "isActivated": true,
+      "additionalProperties": false,
+      "external": false,
+      "catalog": "",
+      "storageSerializationPolicy": "optimized",
+      "GUID": "3cb7f96d-fcdb-4cb8-b021-56abe59e19d0",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
     }
   ],
   "buckets": [
@@ -168486,7 +168613,11 @@
     "5eb31e23-553a-46d5-b32f-6a43ceba7258": "fk_dim_exam_booking_cd_dim_exam_booking_id_to_fact_user_exam_question_answer_cd_dim_exam_booking_id",
     "f4699249-c584-4971-a819-ab96c82db4c1": "fk_dim_organization_cd_dim_organization_id_to_fact_user_login_cd_dim_organization_id",
     "e61e2101-86a6-46e6-ab8d-b883383eae76": "cd_dim_user_skill_id",
-    "9da6a5d4-bc4f-4a01-8751-020d6fa685e2": "fk_dim_question_answer_cd_dim_question_answer_id_to_fact_user_exam_question_answer_cd_dim_question_answer_id"
+    "9da6a5d4-bc4f-4a01-8751-020d6fa685e2": "fk_dim_question_answer_cd_dim_question_answer_id_to_fact_user_exam_question_answer_cd_dim_question_answer_id",
+    "3cb7f96d-fcdb-4cb8-b021-56abe59e19d0": "TEST on local",
+    "3ce8447c-d1c2-4f84-ade5-cb8646f5fe0d": "New column",
+    "5f40e720-7713-4188-ae97-427191dc4fd8": "New column1",
+    "3e8df9a0-89b2-49c2-b771-12daccee249c": "New column2"
   },
   "definitions": {
     "type": "definitions",
@@ -172726,24 +172857,24 @@
       "value": "Yellow - BI reporting\n"
     }
   ],
+  "businessGlossaries": [],
+  "businessGlossaryTerms": [],
   "dbVendor": "Snowflake",
   "appTarget": "Snowflake",
   "creationTS": "2026-01-23T15:32:29.192Z",
   "GUID": "4f12283d-fdcf-4311-b08e-1c4f0779eed4",
-  "businessGlossaries": [],
-  "businessGlossaryTerms": [],
   "isLineageEnabled": false,
   "polyglotModelPaths": [],
-  "lastModifTS": "2026-11-12T09:11:38.429Z",
-  "persistenceSchemaVersion": "7",
+  "lastModifTS": "2026-11-18T13:49:01.447Z",
+  "persistenceSchemaVersion": "9",
   "isCreatedByPlugin": true,
   "pluginInformation": {
     "pluginName": "Snowflake",
-    "pluginVersion": "0.2.62",
+    "pluginVersion": "0.2.67",
     "pluginEngineVersion": "1.0.0"
   },
   "applicationInformation": {
-    "version": "7.9.6"
+    "version": "9.0.0"
   },
   "hackoladeMeta": {
     "validationErrors": {
@@ -176275,6 +176406,14 @@
             "color": {
               "hex": "#f54337"
             }
+          },
+          {
+            "GUID": "3cb7f96d-fcdb-4cb8-b021-56abe59e19d0",
+            "x": 13561.488636363667,
+            "y": 13735.353875291406,
+            "width": 240,
+            "height": 100,
+            "color": {}
           }
         ],
         "erdDefinitions": {
@@ -176285,33 +176424,33 @@
         },
         "buckets": [
           {
-            "x": 66332.26190814393,
-            "y": 49641.7333333334,
+            "x": 66308.26190814393,
+            "y": 49617.7333333334,
             "GUID": "b9d924b4-e84b-49ab-aeb6-0697164435dd"
           },
           {
-            "x": 65904.98181818193,
-            "y": 58112.69696969698,
+            "x": 65880.98181818193,
+            "y": 58088.69696969698,
             "GUID": "5ef82bd2-e0b8-42cb-9823-ac73031468d6"
           },
           {
-            "x": 74767.72892992425,
-            "y": 47874.21324610858,
+            "x": 74743.72892992425,
+            "y": 47850.21324610858,
             "GUID": "77e4303d-adc3-4b20-977d-17377a633159"
           },
           {
-            "x": 66589.212003238,
-            "y": 44260.81829532723,
+            "x": 66565.212003238,
+            "y": 44236.81829532723,
             "GUID": "fd8fd7eb-c7ab-4c36-8aa7-2e9afe896bd5"
           },
           {
-            "x": 66634.18810876622,
-            "y": 47826.63034784215,
+            "x": 66610.18810876622,
+            "y": 47802.63034784215,
             "GUID": "7b359ce3-8124-4363-8176-ee01c46ff9bb"
           },
           {
-            "x": 71299.97647280461,
-            "y": 47954.66432573183,
+            "x": 71275.97647280461,
+            "y": 47930.66432573183,
             "GUID": "1e9afb74-8711-4f83-bb44-4a4e59a3839d"
           }
         ],
