@@ -2,7 +2,7 @@
   "modelName": "New model",
   "collections": [
     {
-      "collectionName": "Test Entity Number One",
+      "collectionName": "Test Entihhh Number One",
       "type": "object",
       "properties": [
         {
@@ -27,20 +27,17 @@
           }
         },
         {
-          "name": "attribute2222",
+          "name": "attribute2222gggg",
           "hackoladeMeta": {},
           "isActivated": true,
           "primaryKey": false,
           "required": false,
-          "alternateKey": false,
           "childType": "varchar",
           "type": "string",
           "compositeKey": [
             "compositePrimaryKey",
             "compositeUniqueKey"
           ],
-          "compositePrimaryKey": false,
-          "compositeUniqueKey": false,
           "GUID": "1e33e035-e1c9-4d08-94e3-a444f0fb3d7d",
           "error": {
             "name": false,
@@ -76,7 +73,10 @@
       },
       "isActivated": true,
       "additionalProperties": false,
-      "GUID": "72e35d63-602e-4581-80e4-4ff6f361cc62"
+      "GUID": "72e35d63-602e-4581-80e4-4ff6f361cc62",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
     },
     {
       "collectionName": "New entity1",
@@ -153,7 +153,10 @@
       },
       "isActivated": true,
       "additionalProperties": false,
-      "GUID": "e54aa180-63a6-498b-8b0a-7c9c4e15b359"
+      "GUID": "e54aa180-63a6-498b-8b0a-7c9c4e15b359",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
     }
   ],
   "buckets": [],
@@ -162,9 +165,9 @@
   "users": [],
   "diagramViews": [],
   "idToNameHashTable": {
-    "72e35d63-602e-4581-80e4-4ff6f361cc62": "New entity",
+    "72e35d63-602e-4581-80e4-4ff6f361cc62": "Test Entihhh Number One",
     "ae505a51-620e-4b36-915c-9375af3a2a17": "New attribute",
-    "1e33e035-e1c9-4d08-94e3-a444f0fb3d7d": "New attribute1",
+    "1e33e035-e1c9-4d08-94e3-a444f0fb3d7d": "attribute2222gggg",
     "7c2529e1-db7d-4ad6-b3b2-19f23679bb1f": "New attribute2",
     "e54aa180-63a6-498b-8b0a-7c9c4e15b359": "New entity1",
     "1efe12f4-ecad-4768-a943-9dfce1a37d8f": "New attribute",
@@ -195,7 +198,7 @@
   "creationTS": "2026-11-18T13:06:21.561Z",
   "GUID": "951136ca-1bf3-438b-b38d-dc9edcab052f",
   "isLineageEnabled": false,
-  "lastModifTS": "2026-11-18T13:06:54.920Z",
+  "lastModifTS": "2026-11-18T13:39:14.509Z",
   "persistenceSchemaVersion": "9",
   "isCreatedByPlugin": true,
   "pluginInformation": {
@@ -206,6 +209,7 @@
   "applicationInformation": {
     "version": "9.0.0"
   },
+  "hackoladeMeta": {},
   "settings": {
     "centralPane": {
       "dbLevel": {
