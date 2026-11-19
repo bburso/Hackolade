@@ -1,62 +1,84 @@
 {
-  "modelName": "New model",
+  "modelName": "Funds Manager Model",
   "collections": [
     {
-      "collectionName": "Test remote CHANGE One",
+      "collectionName": "re_funds_details",
       "type": "object",
       "properties": [
         {
-          "name": "Model2 Entity1 Att1",
-          "hackoladeMeta": {},
           "isActivated": true,
-          "primaryKey": false,
-          "required": false,
-          "childType": "varchar",
-          "type": "string",
           "compositeKey": [
             "compositePrimaryKey",
             "compositeUniqueKey"
           ],
-          "GUID": "ae505a51-620e-4b36-915c-9375af3a2a17",
+          "name": "emp_nm",
+          "code": "employer_name",
+          "primaryKey": false,
+          "required": false,
+          "GUID": "438a5603-5cf2-4ceb-bb92-e12fb519bc23",
+          "type": "reference",
+          "$ref": "#external/definitions/Employer Name",
+          "refType": "external",
+          "ref": "bb3c7922-257a-4eff-9481-8774803420b4",
+          "refIdPath": [
+            "951136ca-1bf3-438b-b38d-dc9edcab052f",
+            "e454f833-c160-447b-becc-22e6f524ff24",
+            "bb3c7922-257a-4eff-9481-8774803420b4"
+          ],
           "error": {
             "name": false,
-            "code": false
+            "code": false,
+            "refPath": false
           }
         },
         {
-          "name": "Model2 Entity1 Att2",
-          "hackoladeMeta": {},
           "isActivated": true,
-          "primaryKey": false,
-          "required": false,
-          "childType": "varchar",
-          "type": "string",
           "compositeKey": [
             "compositePrimaryKey",
             "compositeUniqueKey"
           ],
-          "GUID": "1e33e035-e1c9-4d08-94e3-a444f0fb3d7d",
+          "name": "cntry_nm",
+          "primaryKey": false,
+          "required": false,
+          "GUID": "203a4972-f9cb-4ab6-a3f4-901ed705d3fa",
+          "type": "reference",
+          "$ref": "#external/definitions/Country Name",
+          "refType": "external",
+          "ref": "c72f86d3-285e-4823-9150-383af2f714c9",
+          "refIdPath": [
+            "951136ca-1bf3-438b-b38d-dc9edcab052f",
+            "e454f833-c160-447b-becc-22e6f524ff24",
+            "c72f86d3-285e-4823-9150-383af2f714c9"
+          ],
           "error": {
             "name": false,
-            "code": false
+            "code": false,
+            "refPath": false
           }
         },
         {
-          "name": "Model2 Entity1 Att3",
-          "hackoladeMeta": {},
           "isActivated": true,
-          "primaryKey": false,
-          "required": false,
-          "childType": "varchar",
-          "type": "string",
           "compositeKey": [
             "compositePrimaryKey",
             "compositeUniqueKey"
           ],
-          "GUID": "7c2529e1-db7d-4ad6-b3b2-19f23679bb1f",
+          "name": "other_cntry_nm",
+          "primaryKey": false,
+          "required": false,
+          "GUID": "8d3e86b5-14fe-4b01-aa47-97ada982fe3e",
+          "type": "reference",
+          "$ref": "#external/definitions/Country Name",
+          "refType": "external",
+          "ref": "c72f86d3-285e-4823-9150-383af2f714c9",
+          "refIdPath": [
+            "951136ca-1bf3-438b-b38d-dc9edcab052f",
+            "e454f833-c160-447b-becc-22e6f524ff24",
+            "c72f86d3-285e-4823-9150-383af2f714c9"
+          ],
           "error": {
             "name": false,
-            "code": false
+            "code": false,
+            "refPath": false
           }
         }
       ],
@@ -99,7 +121,8 @@
           ],
           "error": {
             "name": false,
-            "code": false
+            "code": false,
+            "refPath": false
           }
         },
         {
@@ -124,7 +147,8 @@
           ],
           "error": {
             "name": false,
-            "code": false
+            "code": false,
+            "refPath": false
           }
         },
         {
@@ -149,7 +173,8 @@
           ],
           "error": {
             "name": false,
-            "code": false
+            "code": false,
+            "refPath": false
           }
         }
       ],
@@ -169,7 +194,7 @@
   ],
   "buckets": [
     {
-      "name": "New container",
+      "name": "Funds Manager",
       "type": "bucket",
       "collectionIds": [
         "e54aa180-63a6-498b-8b0a-7c9c4e15b359",
@@ -184,7 +209,10 @@
       "show": true,
       "isActivated": true,
       "indexes": [],
-      "GUID": "cf8c828d-80b2-4d48-8518-2dfbc1c4ea67"
+      "GUID": "cf8c828d-80b2-4d48-8518-2dfbc1c4ea67",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      }
     }
   ],
   "views": [],
@@ -192,10 +220,7 @@
   "users": [],
   "diagramViews": [],
   "idToNameHashTable": {
-    "72e35d63-602e-4581-80e4-4ff6f361cc62": "Test remote CHANGE One",
-    "ae505a51-620e-4b36-915c-9375af3a2a17": "Model2 Entity1 Att1",
-    "1e33e035-e1c9-4d08-94e3-a444f0fb3d7d": "Model2 Entity1 Att2",
-    "7c2529e1-db7d-4ad6-b3b2-19f23679bb1f": "Model2 Entity1 Att3",
+    "72e35d63-602e-4581-80e4-4ff6f361cc62": "re_funds_details",
     "e54aa180-63a6-498b-8b0a-7c9c4e15b359": "Funds Manager",
     "cc842641-55bc-4dc9-bd34-a4007c98c951": "Customer",
     "efb11861-0998-4cb2-a3b2-7dafa9e70643": "New attribute",
@@ -203,7 +228,12 @@
     "87df5d6e-472a-4414-afb2-271be8faa5fe": "New attribute1",
     "ff9306e9-4095-4810-bd49-9bab29ce9c09": "Country",
     "dc58a5d7-6eda-483b-abc3-b0149b9f8a8d": "New attribute2",
-    "cf8c828d-80b2-4d48-8518-2dfbc1c4ea67": "New container"
+    "cf8c828d-80b2-4d48-8518-2dfbc1c4ea67": "Funds Manager",
+    "bb3c7922-257a-4eff-9481-8774803420b4": "Employer Name",
+    "438a5603-5cf2-4ceb-bb92-e12fb519bc23": "emp_nm",
+    "c72f86d3-285e-4823-9150-383af2f714c9": "Country Name",
+    "203a4972-f9cb-4ab6-a3f4-901ed705d3fa": "cntry_nm",
+    "8d3e86b5-14fe-4b01-aa47-97ada982fe3e": "other_cntry_nm"
   },
   "definitions": {
     "type": "definitions",
@@ -293,18 +323,18 @@
         "compositePrimaryKey": false,
         "compositeUniqueKey": false,
         "GUID": "cc842641-55bc-4dc9-bd34-a4007c98c951",
+        "collectionName": "Customer",
+        "fieldRelativePath": "#/Data Dictionary/Customer",
+        "fileType": "hackoladeSchema",
+        "kind": "relativePath",
+        "link": "bb_data_dictionary.json",
+        "childType": "object",
         "definitionRefs": [
           [
             "e54aa180-63a6-498b-8b0a-7c9c4e15b359",
             "efb11861-0998-4cb2-a3b2-7dafa9e70643"
           ]
-        ],
-        "collectionName": "Customer",
-        "childType": "object",
-        "link": "bb_data_dictionary.json",
-        "fieldRelativePath": "#/Data Dictionary/Customer",
-        "kind": "relativePath",
-        "fileType": "hackoladeSchema"
+        ]
       },
       {
         "name": "Employer",
@@ -345,7 +375,6 @@
               "compositeUniqueKey"
             ],
             "GUID": "3aec1b74-c2de-52c8-a179-4185758a7f4d",
-            "code": "employer_name",
             "description": "The name of an empoyer",
             "error": {
               "name": false,
@@ -379,18 +408,18 @@
         "compositePrimaryKey": false,
         "compositeUniqueKey": false,
         "GUID": "8422125b-c734-4049-817d-d3c19efa6eb6",
+        "collectionName": "Employer",
+        "fieldRelativePath": "#/Data Dictionary/Employer",
+        "fileType": "hackoladeSchema",
+        "kind": "relativePath",
+        "link": "bb_data_dictionary.json",
+        "childType": "object",
         "definitionRefs": [
           [
             "e54aa180-63a6-498b-8b0a-7c9c4e15b359",
             "87df5d6e-472a-4414-afb2-271be8faa5fe"
           ]
-        ],
-        "collectionName": "Employer",
-        "childType": "object",
-        "link": "bb_data_dictionary.json",
-        "fieldRelativePath": "#/Data Dictionary/Employer",
-        "kind": "relativePath",
-        "fileType": "hackoladeSchema"
+        ]
       },
       {
         "name": "Country",
@@ -475,18 +504,86 @@
         "compositePrimaryKey": false,
         "compositeUniqueKey": false,
         "GUID": "ff9306e9-4095-4810-bd49-9bab29ce9c09",
+        "collectionName": "Country",
+        "fieldRelativePath": "#/Data Dictionary/Country",
+        "fileType": "hackoladeSchema",
+        "kind": "relativePath",
+        "link": "bb_data_dictionary.json",
+        "childType": "object",
         "definitionRefs": [
           [
             "e54aa180-63a6-498b-8b0a-7c9c4e15b359",
             "dc58a5d7-6eda-483b-abc3-b0149b9f8a8d"
           ]
+        ]
+      },
+      {
+        "name": "Employer Name",
+        "hackoladeMeta": {},
+        "isActivated": true,
+        "primaryKey": false,
+        "required": false,
+        "childType": "varchar",
+        "type": "string",
+        "compositeKey": [
+          "compositePrimaryKey",
+          "compositeUniqueKey"
         ],
-        "collectionName": "Country",
-        "childType": "object",
+        "GUID": "bb3c7922-257a-4eff-9481-8774803420b4",
+        "description": "The name of an empoyer",
+        "error": {
+          "name": false,
+          "code": false
+        },
         "link": "bb_data_dictionary.json",
-        "fieldRelativePath": "#/Data Dictionary/Country",
+        "fieldRelativePath": "#/Data Dictionary/Employer/properties/Employer Name",
         "kind": "relativePath",
-        "fileType": "hackoladeSchema"
+        "fileType": "hackoladeSchema",
+        "definitionRefs": [
+          [
+            "72e35d63-602e-4581-80e4-4ff6f361cc62",
+            "438a5603-5cf2-4ceb-bb92-e12fb519bc23"
+          ]
+        ]
+      },
+      {
+        "name": "Country Name",
+        "hackoladeMeta": {},
+        "isActivated": true,
+        "primaryKey": false,
+        "required": false,
+        "childType": "varchar",
+        "type": "string",
+        "compositeKey": [
+          "compositePrimaryKey",
+          "compositeUniqueKey"
+        ],
+        "GUID": "c72f86d3-285e-4823-9150-383af2f714c9",
+        "error": {
+          "name": false,
+          "code": false
+        },
+        "glossaryTerms": [
+          {
+            "GUID": "b468ebd2-479c-4997-afc0-707c3a4d2f8e",
+            "glossaryTermId": "e2c4f625-b7b8-4954-8974-2f2515001e8b"
+          }
+        ],
+        "description": "This is the UN agreed name for a country",
+        "link": "bb_data_dictionary.json",
+        "fieldRelativePath": "#/Data Dictionary/Country/properties/Country Name",
+        "kind": "relativePath",
+        "fileType": "hackoladeSchema",
+        "definitionRefs": [
+          [
+            "72e35d63-602e-4581-80e4-4ff6f361cc62",
+            "203a4972-f9cb-4ab6-a3f4-901ed705d3fa"
+          ],
+          [
+            "72e35d63-602e-4581-80e4-4ff6f361cc62",
+            "8d3e86b5-14fe-4b01-aa47-97ada982fe3e"
+          ]
+        ]
       }
     ],
     "GUID": "e454f833-c160-447b-becc-22e6f524ff24"
@@ -568,7 +665,8 @@
         "09eeb7d8-7868-4de9-ab14-984f85b41c1b": "This is the UN agreed name for a country"
       },
       "refIds": [
-        "db79e13f-3bd7-5266-8845-5513a810024e"
+        "db79e13f-3bd7-5266-8845-5513a810024e",
+        "c72f86d3-285e-4823-9150-383af2f714c9"
       ],
       "updatedAt": "2026-11-18T15:31:17.381Z"
     }
@@ -578,7 +676,7 @@
   "creationTS": "2026-11-18T13:06:21.561Z",
   "GUID": "951136ca-1bf3-438b-b38d-dc9edcab052f",
   "isLineageEnabled": false,
-  "lastModifTS": "2026-11-18T16:30:38.642Z",
+  "lastModifTS": "2026-11-19T09:05:35.760Z",
   "persistenceSchemaVersion": "9",
   "isCreatedByPlugin": true,
   "pluginInformation": {
@@ -589,7 +687,11 @@
   "applicationInformation": {
     "version": "9.0.0"
   },
-  "hackoladeMeta": {},
+  "hackoladeMeta": {
+    "validationErrors": {
+      "modelName": false
+    }
+  },
   "settings": {
     "centralPane": {
       "dbLevel": {
@@ -598,8 +700,8 @@
             "GUID": "72e35d63-602e-4581-80e4-4ff6f361cc62",
             "x": 1476,
             "y": 1545,
-            "width": 286,
-            "height": 86,
+            "width": 254,
+            "height": 103,
             "color": {
               "hex": "#2196F3"
             }
@@ -608,7 +710,7 @@
             "GUID": "e54aa180-63a6-498b-8b0a-7c9c4e15b359",
             "x": 1437,
             "y": 1286,
-            "width": 299,
+            "width": 321,
             "height": 248,
             "color": {
               "hex": "#2196F3"
@@ -666,7 +768,13 @@
         "diagramViews": [],
         "decorativeSymbols": [],
         "nestedCollectionsLayout": "horizontal",
-        "options": [],
+        "options": [
+          {
+            "autoWidth": false,
+            "autoHeight": false,
+            "GUID": "72e35d63-602e-4581-80e4-4ff6f361cc62"
+          }
+        ],
         "relationshipUpdateDisabled": false
       },
       "collectionLevel": {},

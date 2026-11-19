@@ -119,7 +119,6 @@
             "compositeUniqueKey"
           ],
           "GUID": "86edece6-80aa-4161-82e9-ebb03abe93aa",
-          "code": "employer_name",
           "description": "The name of an empoyer",
           "error": {
             "name": false,
@@ -461,7 +460,7 @@
   "creationTS": "2026-11-18T13:06:21.561Z",
   "GUID": "951136ca-1bf3-438b-b38d-dc9edcab052f",
   "isLineageEnabled": false,
-  "lastModifTS": "2026-11-18T16:32:39.231Z",
+  "lastModifTS": "2026-11-19T09:01:59.921Z",
   "persistenceSchemaVersion": "9",
   "isCreatedByPlugin": true,
   "pluginInformation": {

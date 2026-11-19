@@ -1,8 +1,102 @@
 {
-  "modelName": "Account Model",
+  "modelName": "Accounts Manager Model",
   "collections": [
     {
-      "collectionName": "Account Holder",
+      "collectionName": "re_accounts_details",
+      "type": "object",
+      "properties": [
+        {
+          "isActivated": true,
+          "compositeKey": [
+            "compositePrimaryKey",
+            "compositeUniqueKey"
+          ],
+          "name": "employer_name",
+          "code": "employer_name",
+          "primaryKey": false,
+          "required": false,
+          "GUID": "c4627487-6563-40ca-bbbc-f9b063933c39",
+          "type": "reference",
+          "$ref": "#external/definitions/Employer Name",
+          "refType": "external",
+          "ref": "341d6242-ff17-4c8a-9d47-9c1d9d0d54d1",
+          "refIdPath": [
+            "951136ca-1bf3-438b-b38d-dc9edcab052f",
+            "e454f833-c160-447b-becc-22e6f524ff24",
+            "341d6242-ff17-4c8a-9d47-9c1d9d0d54d1"
+          ],
+          "error": {
+            "name": false,
+            "code": false,
+            "refPath": false
+          }
+        },
+        {
+          "isActivated": true,
+          "compositeKey": [
+            "compositePrimaryKey",
+            "compositeUniqueKey"
+          ],
+          "name": "country_name",
+          "primaryKey": false,
+          "required": false,
+          "GUID": "5c81e4b6-9901-4a42-9891-7e108f99754c",
+          "type": "reference",
+          "$ref": "#external/definitions/Country Name",
+          "refType": "external",
+          "ref": "319d481c-419d-4c77-bfb2-c987c4dc8adb",
+          "refIdPath": [
+            "951136ca-1bf3-438b-b38d-dc9edcab052f",
+            "e454f833-c160-447b-becc-22e6f524ff24",
+            "319d481c-419d-4c77-bfb2-c987c4dc8adb"
+          ],
+          "error": {
+            "name": false,
+            "code": false,
+            "refPath": false
+          }
+        },
+        {
+          "isActivated": true,
+          "compositeKey": [
+            "compositePrimaryKey",
+            "compositeUniqueKey"
+          ],
+          "name": "alternative_country_name",
+          "primaryKey": false,
+          "required": false,
+          "GUID": "34a3bfa7-e4a5-4f7b-b0ef-107b5689584b",
+          "type": "reference",
+          "$ref": "#external/definitions/Country Name",
+          "refType": "external",
+          "ref": "319d481c-419d-4c77-bfb2-c987c4dc8adb",
+          "refIdPath": [
+            "951136ca-1bf3-438b-b38d-dc9edcab052f",
+            "e454f833-c160-447b-becc-22e6f524ff24",
+            "319d481c-419d-4c77-bfb2-c987c4dc8adb"
+          ],
+          "error": {
+            "name": false,
+            "code": false,
+            "refPath": false
+          }
+        }
+      ],
+      "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "50dc4494-0d80-44ba-8705-c9462914418e"
+      },
+      "isActivated": true,
+      "additionalProperties": false,
+      "GUID": "72e35d63-602e-4581-80e4-4ff6f361cc62",
+      "hackoladeMeta": {
+        "validationErrors": {}
+      },
+      "bucketId": "cf8c828d-80b2-4d48-8518-2dfbc1c4ea67"
+    },
+    {
+      "collectionName": "Accounts Manager",
       "type": "object",
       "properties": [
         {
@@ -13,113 +107,23 @@
           ],
           "compositePrimaryKey": false,
           "compositeUniqueKey": false,
-          "name": "Account holder",
-          "primaryKey": true,
-          "required": true,
-          "alternateKey": false,
-          "GUID": "3def3567-faa5-4bff-b29f-ae3834d12cff",
-          "type": "reference",
-          "$ref": "#model/definitions/New attribute",
-          "refType": "model",
-          "ref": "884da45a-4fa2-42f7-b104-2aebee890bf6",
-          "refIdPath": [
-            "951136ca-1bf3-438b-b38d-dc9edcab052f",
-            "493e48af-a173-4b88-8138-0757920272e6",
-            "884da45a-4fa2-42f7-b104-2aebee890bf6"
-          ],
-          "hackoladeMeta": {},
-          "error": {
-            "primaryKey": false
-          },
-          "sources": [
-            {
-              "GUID": "a05a9876-b5c6-4f6a-bced-10229b3d7edb",
-              "lineageSourceGUID": "f15fad7e-1b0a-407c-b1aa-04ce4fdb26ae",
-              "lineageSourceAttrBusName": "Account holder",
-              "lineageSourceAttrTechName": "",
-              "lineageSrcEntityBusName": "Account Holder",
-              "lineageSrcEntityTechName": "",
-              "lineageSourceContainerBusName": "New model number 1",
-              "lineageSourceContainerTechName": ""
-            }
-          ]
-        },
-        {
-          "isActivated": true,
-          "compositeKey": [
-            "compositePrimaryKey",
-            "compositeUniqueKey"
-          ],
-          "compositePrimaryKey": false,
-          "compositeUniqueKey": false,
-          "name": "Employer",
+          "name": "New attribute",
           "additionalProperties": false,
-          "GUID": "04ab05e7-e794-482f-9a6c-954a57359cfc",
-          "type": "reference",
-          "$ref": "#external/definitions/Employer",
-          "refType": "external",
-          "ref": "68a3026c-eacf-436e-8b50-7dde94386546",
-          "refIdPath": [
-            "951136ca-1bf3-438b-b38d-dc9edcab052f",
-            "e454f833-c160-447b-becc-22e6f524ff24",
-            "68a3026c-eacf-436e-8b50-7dde94386546"
-          ],
-          "error": {
-            "name": false,
-            "code": false,
-            "refPath": false
-          },
-          "sources": [
-            {
-              "GUID": "c22be005-6f3c-4e62-8331-79d174d314d2",
-              "lineageSourceGUID": "f15fad7e-1b0a-407c-b1aa-04ce4fdb26ae",
-              "lineageSourceAttrBusName": "Employer",
-              "lineageSourceAttrTechName": "",
-              "lineageSrcEntityBusName": "Account Holder",
-              "lineageSrcEntityTechName": "",
-              "lineageSourceContainerBusName": "New model number 1",
-              "lineageSourceContainerTechName": ""
-            }
-          ]
-        },
-        {
-          "isActivated": true,
-          "compositeKey": [
-            "compositePrimaryKey",
-            "compositeUniqueKey"
-          ],
-          "compositePrimaryKey": false,
-          "compositeUniqueKey": false,
-          "name": "Customer",
-          "additionalProperties": false,
-          "GUID": "0ad07f8e-aef6-4c99-a32a-217a9bc62022",
+          "GUID": "efb11861-0998-4cb2-a3b2-7dafa9e70643",
           "type": "reference",
           "$ref": "#external/definitions/Customer",
           "refType": "external",
-          "ref": "17bc4f3d-ef51-44de-a51e-3adf318cb03e",
+          "ref": "cc842641-55bc-4dc9-bd34-a4007c98c951",
           "refIdPath": [
             "951136ca-1bf3-438b-b38d-dc9edcab052f",
             "e454f833-c160-447b-becc-22e6f524ff24",
-            "17bc4f3d-ef51-44de-a51e-3adf318cb03e"
+            "cc842641-55bc-4dc9-bd34-a4007c98c951"
           ],
           "error": {
             "name": false,
             "code": false,
             "refPath": false
-          },
-          "hackoladeMeta": {},
-          "sources": [
-            {
-              "GUID": "92f0dd62-44c3-49f4-b49b-381572506724",
-              "lineageSourceGUID": "f15fad7e-1b0a-407c-b1aa-04ce4fdb26ae",
-              "lineageSourceAttrBusName": "Customer",
-              "lineageSourceAttrTechName": "",
-              "lineageSrcEntityBusName": "Account Holder",
-              "lineageSrcEntityTechName": "",
-              "lineageSourceContainerBusName": "New model number 1",
-              "lineageSourceContainerTechName": ""
-            }
-          ]
+          }
         },
         {
           "isActivated": true,
@@ -127,223 +131,74 @@
             "compositePrimaryKey",
             "compositeUniqueKey"
           ],
-          "name": "Country Name",
-          "primaryKey": false,
-          "required": false,
-          "GUID": "f86f6b08-14ff-480f-b2ce-2a260d903b06",
+          "compositePrimaryKey": false,
+          "compositeUniqueKey": false,
+          "name": "New attribute1",
+          "additionalProperties": false,
+          "GUID": "87df5d6e-472a-4414-afb2-271be8faa5fe",
           "type": "reference",
-          "$ref": "#external/definitions/Country Name",
+          "$ref": "#external/definitions/Employer",
           "refType": "external",
-          "ref": "c4697796-6a62-4366-9ef8-059e53995933",
+          "ref": "8422125b-c734-4049-817d-d3c19efa6eb6",
           "refIdPath": [
             "951136ca-1bf3-438b-b38d-dc9edcab052f",
             "e454f833-c160-447b-becc-22e6f524ff24",
-            "c4697796-6a62-4366-9ef8-059e53995933"
+            "8422125b-c734-4049-817d-d3c19efa6eb6"
           ],
           "error": {
             "name": false,
             "code": false,
             "refPath": false
-          },
-          "sources": [
-            {
-              "GUID": "93969570-b1ba-463f-8639-589f2314dc4b",
-              "lineageSourceGUID": "f15fad7e-1b0a-407c-b1aa-04ce4fdb26ae",
-              "lineageSourceAttrBusName": "Country Name",
-              "lineageSourceAttrTechName": "",
-              "lineageSrcEntityBusName": "Account Holder",
-              "lineageSrcEntityTechName": "",
-              "lineageSourceContainerBusName": "New model number 1",
-              "lineageSourceContainerTechName": ""
-            }
-          ]
+          }
         },
         {
+          "isActivated": true,
+          "compositeKey": [
+            "compositePrimaryKey",
+            "compositeUniqueKey"
+          ],
+          "compositePrimaryKey": false,
+          "compositeUniqueKey": false,
           "name": "New attribute2",
-          "hackoladeMeta": {},
-          "isActivated": true,
-          "primaryKey": false,
-          "required": false,
-          "alternateKey": false,
-          "childType": "varchar",
-          "type": "string",
-          "compositeKey": [
-            "compositePrimaryKey",
-            "compositeUniqueKey"
-          ],
-          "compositePrimaryKey": false,
-          "compositeUniqueKey": false,
-          "GUID": "034691e6-7f8e-491a-b5e0-776df7cb8abc",
-          "error": {
-            "name": false,
-            "code": false
-          },
-          "sources": [
-            {
-              "GUID": "6759cc15-6ce4-4617-a3e5-730414d2379a",
-              "lineageSourceGUID": "f15fad7e-1b0a-407c-b1aa-04ce4fdb26ae",
-              "lineageSourceAttrBusName": "New attribute2",
-              "lineageSourceAttrTechName": "",
-              "lineageSrcEntityBusName": "Account Holder",
-              "lineageSrcEntityTechName": "",
-              "lineageSourceContainerBusName": "New model number 1",
-              "lineageSourceContainerTechName": ""
-            }
-          ]
-        }
-      ],
-      "definitions": {
-        "type": "definitions",
-        "properties": [],
-        "GUID": "8f36ada9-1c8f-44ba-8687-4960d8f5db23"
-      },
-      "isActivated": true,
-      "additionalProperties": false,
-      "GUID": "937556e6-9d31-4dc7-b579-ee22d4386a8e",
-      "hackoladeMeta": {
-        "validationErrors": {}
-      },
-      "bucketId": "487922f1-007e-4136-91ee-ec78797c3b29"
-    },
-    {
-      "collectionName": "Account manager",
-      "type": "object",
-      "properties": [
-        {
-          "name": "Account manger",
-          "hackoladeMeta": {},
-          "isActivated": true,
-          "primaryKey": true,
-          "required": true,
-          "childType": "varchar",
-          "type": "string",
-          "compositeKey": [
-            "compositePrimaryKey",
-            "compositeUniqueKey"
-          ],
-          "GUID": "5083e408-075a-4326-a2c0-0bea15d34935",
-          "parentRelationship": "",
-          "childRelationships": [],
-          "foreignCollection": "",
-          "foreignField": [],
-          "error": {},
-          "sources": [
-            {
-              "GUID": "70abb548-7def-4dcc-9311-94d9fa9dd81e",
-              "lineageSourceGUID": "f15fad7e-1b0a-407c-b1aa-04ce4fdb26ae",
-              "lineageSourceAttrBusName": "Account manger",
-              "lineageSourceAttrTechName": "",
-              "lineageSrcEntityBusName": "Account manager",
-              "lineageSrcEntityTechName": "",
-              "lineageSourceContainerBusName": "New model number 1",
-              "lineageSourceContainerTechName": ""
-            }
-          ]
-        },
-        {
-          "isActivated": true,
-          "compositeKey": [
-            "compositePrimaryKey",
-            "compositeUniqueKey"
-          ],
-          "compositePrimaryKey": false,
-          "compositeUniqueKey": false,
-          "name": "Account holder",
-          "primaryKey": false,
-          "required": false,
-          "alternateKey": false,
-          "GUID": "6be9c05e-20e6-43b8-9f30-16e0965f6c93",
+          "additionalProperties": false,
+          "GUID": "dc58a5d7-6eda-483b-abc3-b0149b9f8a8d",
           "type": "reference",
-          "$ref": "#model/definitions/New attribute",
-          "refType": "model",
-          "ref": "884da45a-4fa2-42f7-b104-2aebee890bf6",
-          "refIdPath": [
-            "951136ca-1bf3-438b-b38d-dc9edcab052f",
-            "493e48af-a173-4b88-8138-0757920272e6",
-            "884da45a-4fa2-42f7-b104-2aebee890bf6"
-          ],
-          "hackoladeMeta": {},
-          "error": {
-            "name": false,
-            "code": false
-          },
-          "foreignCollection": "",
-          "foreignField": [],
-          "sources": [
-            {
-              "GUID": "407cb10c-b4a7-408b-8e9a-7d619bef7ca5",
-              "lineageSourceGUID": "f15fad7e-1b0a-407c-b1aa-04ce4fdb26ae",
-              "lineageSourceAttrBusName": "Account holder",
-              "lineageSourceAttrTechName": "",
-              "lineageSrcEntityBusName": "Account manager",
-              "lineageSrcEntityTechName": "",
-              "lineageSourceContainerBusName": "New model number 1",
-              "lineageSourceContainerTechName": ""
-            }
-          ]
-        },
-        {
-          "isActivated": true,
-          "compositeKey": [
-            "compositePrimaryKey",
-            "compositeUniqueKey"
-          ],
-          "name": "Country Name",
-          "primaryKey": false,
-          "required": false,
-          "GUID": "9869fab3-4d56-4ea7-b549-4aefd8660e9d",
-          "type": "reference",
-          "$ref": "#external/definitions/Country Name",
+          "$ref": "#external/definitions/Country",
           "refType": "external",
-          "ref": "7506b4a5-5b1c-4095-bfba-1ff981dcae12",
+          "ref": "ff9306e9-4095-4810-bd49-9bab29ce9c09",
           "refIdPath": [
             "951136ca-1bf3-438b-b38d-dc9edcab052f",
             "e454f833-c160-447b-becc-22e6f524ff24",
-            "7506b4a5-5b1c-4095-bfba-1ff981dcae12"
+            "ff9306e9-4095-4810-bd49-9bab29ce9c09"
           ],
           "error": {
             "name": false,
             "code": false,
             "refPath": false
-          },
-          "hackoladeMeta": {},
-          "foreignCollection": "",
-          "foreignField": [],
-          "sources": [
-            {
-              "GUID": "fcddc3b8-5577-43a6-a369-e42f866112c8",
-              "lineageSourceGUID": "f15fad7e-1b0a-407c-b1aa-04ce4fdb26ae",
-              "lineageSourceAttrBusName": "Country Name",
-              "lineageSourceAttrTechName": "",
-              "lineageSrcEntityBusName": "Account manager",
-              "lineageSrcEntityTechName": "",
-              "lineageSourceContainerBusName": "New model number 1",
-              "lineageSourceContainerTechName": ""
-            }
-          ]
+          }
         }
       ],
       "definitions": {
         "type": "definitions",
         "properties": [],
-        "GUID": "3eb161d4-a467-442a-a338-4fc9966936f4"
+        "GUID": "edc201e6-a86b-42b5-bdbb-cf8bff3cfce9"
       },
       "isActivated": true,
       "additionalProperties": false,
-      "GUID": "3d80d5d6-eeb9-431e-9d84-0ed560fc82d0",
-      "bucketId": "487922f1-007e-4136-91ee-ec78797c3b29",
+      "GUID": "e54aa180-63a6-498b-8b0a-7c9c4e15b359",
       "hackoladeMeta": {
         "validationErrors": {}
-      }
+      },
+      "bucketId": "cf8c828d-80b2-4d48-8518-2dfbc1c4ea67"
     }
   ],
   "buckets": [
     {
-      "name": "New model number 1",
+      "name": "Account Manger Container",
       "type": "bucket",
       "collectionIds": [
-        "3d80d5d6-eeb9-431e-9d84-0ed560fc82d0",
-        "937556e6-9d31-4dc7-b579-ee22d4386a8e"
+        "e54aa180-63a6-498b-8b0a-7c9c4e15b359",
+        "72e35d63-602e-4581-80e4-4ff6f361cc62"
       ],
       "backgroundColor": {
         "r": 129,
@@ -354,7 +209,7 @@
       "show": true,
       "isActivated": true,
       "indexes": [],
-      "GUID": "487922f1-007e-4136-91ee-ec78797c3b29",
+      "GUID": "cf8c828d-80b2-4d48-8518-2dfbc1c4ea67",
       "hackoladeMeta": {
         "validationErrors": {}
       }
@@ -365,59 +220,24 @@
   "users": [],
   "diagramViews": [],
   "idToNameHashTable": {
-    "937556e6-9d31-4dc7-b579-ee22d4386a8e": "Account Holder",
-    "034691e6-7f8e-491a-b5e0-776df7cb8abc": "New attribute2",
-    "884da45a-4fa2-42f7-b104-2aebee890bf6": "New attribute",
-    "17bc4f3d-ef51-44de-a51e-3adf318cb03e": "Customer",
-    "68a3026c-eacf-436e-8b50-7dde94386546": "Employer",
-    "04ab05e7-e794-482f-9a6c-954a57359cfc": "Employer",
-    "0ad07f8e-aef6-4c99-a32a-217a9bc62022": "Customer",
-    "3def3567-faa5-4bff-b29f-ae3834d12cff": "Account holder",
-    "c4697796-6a62-4366-9ef8-059e53995933": "Country Name",
-    "f86f6b08-14ff-480f-b2ce-2a260d903b06": "Country Name",
-    "487922f1-007e-4136-91ee-ec78797c3b29": "New model number 1",
-    "3d80d5d6-eeb9-431e-9d84-0ed560fc82d0": "Account manager",
-    "6be9c05e-20e6-43b8-9f30-16e0965f6c93": "Account holder",
-    "9869fab3-4d56-4ea7-b549-4aefd8660e9d": "Country Name",
-    "5083e408-075a-4326-a2c0-0bea15d34935": "Account manger",
-    "7506b4a5-5b1c-4095-bfba-1ff981dcae12": "Country Name",
-    "f15fad7e-1b0a-407c-b1aa-04ce4fdb26ae": "Renamed Container"
+    "72e35d63-602e-4581-80e4-4ff6f361cc62": "re_accounts_details",
+    "e54aa180-63a6-498b-8b0a-7c9c4e15b359": "Funds Manager",
+    "cc842641-55bc-4dc9-bd34-a4007c98c951": "Customer",
+    "efb11861-0998-4cb2-a3b2-7dafa9e70643": "New attribute",
+    "8422125b-c734-4049-817d-d3c19efa6eb6": "Employer",
+    "87df5d6e-472a-4414-afb2-271be8faa5fe": "New attribute1",
+    "ff9306e9-4095-4810-bd49-9bab29ce9c09": "Country",
+    "dc58a5d7-6eda-483b-abc3-b0149b9f8a8d": "New attribute2",
+    "cf8c828d-80b2-4d48-8518-2dfbc1c4ea67": "Account Manger Container",
+    "341d6242-ff17-4c8a-9d47-9c1d9d0d54d1": "Employer Name",
+    "c4627487-6563-40ca-bbbc-f9b063933c39": "employer_name",
+    "319d481c-419d-4c77-bfb2-c987c4dc8adb": "Country Name",
+    "5c81e4b6-9901-4a42-9891-7e108f99754c": "country_name",
+    "34a3bfa7-e4a5-4f7b-b0ef-107b5689584b": "alternative_country_name"
   },
   "definitions": {
     "type": "definitions",
-    "properties": [
-      {
-        "name": "New attribute",
-        "hackoladeMeta": {},
-        "isActivated": true,
-        "primaryKey": false,
-        "required": false,
-        "alternateKey": false,
-        "childType": "varchar",
-        "type": "string",
-        "compositeKey": [
-          "compositePrimaryKey",
-          "compositeUniqueKey"
-        ],
-        "compositePrimaryKey": false,
-        "compositeUniqueKey": false,
-        "GUID": "884da45a-4fa2-42f7-b104-2aebee890bf6",
-        "error": {
-          "name": false,
-          "code": false
-        },
-        "definitionRefs": [
-          [
-            "937556e6-9d31-4dc7-b579-ee22d4386a8e",
-            "3def3567-faa5-4bff-b29f-ae3834d12cff"
-          ],
-          [
-            "3d80d5d6-eeb9-431e-9d84-0ed560fc82d0",
-            "6be9c05e-20e6-43b8-9f30-16e0965f6c93"
-          ]
-        ]
-      }
-    ],
+    "properties": [],
     "GUID": "493e48af-a173-4b88-8138-0757920272e6"
   },
   "polyglotDefinitions": {
@@ -443,7 +263,7 @@
             "name": "Customer id",
             "primaryKey": false,
             "required": false,
-            "GUID": "56444948-0e09-5a19-b143-5c961247608d",
+            "GUID": "523cd84c-6225-5336-b89a-096ee33383b2",
             "type": "string",
             "hackoladeMeta": {},
             "childType": "varchar",
@@ -463,7 +283,7 @@
             "name": "Customer Name",
             "primaryKey": false,
             "required": false,
-            "GUID": "7254d3d0-b065-59ca-adaa-5b632f209ca6",
+            "GUID": "58b9a53c-cce7-51c0-abe8-58ebc46acb32",
             "type": "string",
             "hackoladeMeta": {},
             "childType": "varchar",
@@ -483,7 +303,7 @@
             "name": "Customer DOB",
             "primaryKey": false,
             "required": false,
-            "GUID": "6f39c4d1-0a9f-52ef-9e2f-47e1fc4fe4fe",
+            "GUID": "cc77c091-c6f4-504a-9199-d1cdf241ba0f",
             "type": "string",
             "hackoladeMeta": {},
             "childType": "varchar",
@@ -502,7 +322,7 @@
         ],
         "compositePrimaryKey": false,
         "compositeUniqueKey": false,
-        "GUID": "17bc4f3d-ef51-44de-a51e-3adf318cb03e",
+        "GUID": "cc842641-55bc-4dc9-bd34-a4007c98c951",
         "collectionName": "Customer",
         "fieldRelativePath": "#/Data Dictionary/Customer",
         "fileType": "hackoladeSchema",
@@ -511,12 +331,8 @@
         "childType": "object",
         "definitionRefs": [
           [
-            "937556e6-9d31-4dc7-b579-ee22d4386a8e",
-            "0ad07f8e-aef6-4c99-a32a-217a9bc62022"
-          ],
-          [
-            "3d80d5d6-eeb9-431e-9d84-0ed560fc82d0",
-            "3cc94557-e08a-4c01-8746-eb4cd17bb6f3"
+            "e54aa180-63a6-498b-8b0a-7c9c4e15b359",
+            "efb11861-0998-4cb2-a3b2-7dafa9e70643"
           ]
         ]
       },
@@ -538,10 +354,12 @@
               "compositePrimaryKey",
               "compositeUniqueKey"
             ],
-            "GUID": "608a9cbc-7719-583d-a1d5-6013303ba1c9",
-            "code": "emplyer_id",
+            "GUID": "30f380fb-219b-57eb-8a45-06d4c4c8b1f9",
+            "code": "employer_id",
             "description": "This is an employer id",
             "comments": "To be used for a employer in any company",
+            "length": 10,
+            "mode": "string",
             "error": {}
           },
           {
@@ -556,7 +374,8 @@
               "compositePrimaryKey",
               "compositeUniqueKey"
             ],
-            "GUID": "95acf995-f4e9-536e-a11f-784ac4fc616d",
+            "GUID": "3aec1b74-c2de-52c8-a179-4185758a7f4d",
+            "description": "The name of an empoyer",
             "error": {
               "name": false,
               "code": false
@@ -574,7 +393,7 @@
               "compositePrimaryKey",
               "compositeUniqueKey"
             ],
-            "GUID": "bd3f78f1-a2e6-5888-a9c9-8ab6d2246f60",
+            "GUID": "55691b89-75b0-5495-af0d-df64f8ebc913",
             "error": {
               "name": false,
               "code": false
@@ -588,7 +407,7 @@
         ],
         "compositePrimaryKey": false,
         "compositeUniqueKey": false,
-        "GUID": "68a3026c-eacf-436e-8b50-7dde94386546",
+        "GUID": "8422125b-c734-4049-817d-d3c19efa6eb6",
         "collectionName": "Employer",
         "fieldRelativePath": "#/Data Dictionary/Employer",
         "fileType": "hackoladeSchema",
@@ -597,8 +416,133 @@
         "childType": "object",
         "definitionRefs": [
           [
-            "937556e6-9d31-4dc7-b579-ee22d4386a8e",
-            "04ab05e7-e794-482f-9a6c-954a57359cfc"
+            "e54aa180-63a6-498b-8b0a-7c9c4e15b359",
+            "87df5d6e-472a-4414-afb2-271be8faa5fe"
+          ]
+        ]
+      },
+      {
+        "name": "Country",
+        "hackoladeMeta": {},
+        "isActivated": true,
+        "type": "document",
+        "properties": [
+          {
+            "name": "Country Code",
+            "hackoladeMeta": {},
+            "isActivated": true,
+            "primaryKey": false,
+            "required": false,
+            "childType": "varchar",
+            "type": "string",
+            "compositeKey": [
+              "compositePrimaryKey",
+              "compositeUniqueKey"
+            ],
+            "GUID": "d07d436a-7c6f-5b1e-8900-6378c51a72f5",
+            "error": {
+              "name": false,
+              "code": false
+            },
+            "glossaryTerms": [
+              {
+                "GUID": "14452c9d-6c40-4c4f-895f-fd18b9f78b86",
+                "glossaryTermId": "d5c1381a-5476-41b9-82ec-48173da9ab82"
+              }
+            ],
+            "description": "This is the code that represents countries"
+          },
+          {
+            "name": "Country Name",
+            "hackoladeMeta": {},
+            "isActivated": true,
+            "primaryKey": false,
+            "required": false,
+            "childType": "varchar",
+            "type": "string",
+            "compositeKey": [
+              "compositePrimaryKey",
+              "compositeUniqueKey"
+            ],
+            "GUID": "db79e13f-3bd7-5266-8845-5513a810024e",
+            "error": {
+              "name": false,
+              "code": false
+            },
+            "glossaryTerms": [
+              {
+                "GUID": "b468ebd2-479c-4997-afc0-707c3a4d2f8e",
+                "glossaryTermId": "e2c4f625-b7b8-4954-8974-2f2515001e8b"
+              }
+            ],
+            "description": "This is the UN agreed name for a country"
+          },
+          {
+            "name": "Country Capital",
+            "hackoladeMeta": {},
+            "isActivated": true,
+            "primaryKey": false,
+            "required": false,
+            "childType": "varchar",
+            "type": "string",
+            "compositeKey": [
+              "compositePrimaryKey",
+              "compositeUniqueKey"
+            ],
+            "GUID": "e761bd68-c43d-5517-bd8e-e3946bc58c97",
+            "error": {
+              "name": false,
+              "code": false
+            }
+          }
+        ],
+        "additionalProperties": false,
+        "compositeKey": [
+          "compositePrimaryKey",
+          "compositeUniqueKey"
+        ],
+        "compositePrimaryKey": false,
+        "compositeUniqueKey": false,
+        "GUID": "ff9306e9-4095-4810-bd49-9bab29ce9c09",
+        "collectionName": "Country",
+        "fieldRelativePath": "#/Data Dictionary/Country",
+        "fileType": "hackoladeSchema",
+        "kind": "relativePath",
+        "link": "bb_data_dictionary.json",
+        "childType": "object",
+        "definitionRefs": [
+          [
+            "e54aa180-63a6-498b-8b0a-7c9c4e15b359",
+            "dc58a5d7-6eda-483b-abc3-b0149b9f8a8d"
+          ]
+        ]
+      },
+      {
+        "name": "Employer Name",
+        "hackoladeMeta": {},
+        "isActivated": true,
+        "primaryKey": false,
+        "required": false,
+        "childType": "varchar",
+        "type": "string",
+        "compositeKey": [
+          "compositePrimaryKey",
+          "compositeUniqueKey"
+        ],
+        "GUID": "341d6242-ff17-4c8a-9d47-9c1d9d0d54d1",
+        "description": "The name of an empoyer",
+        "error": {
+          "name": false,
+          "code": false
+        },
+        "link": "bb_data_dictionary.json",
+        "fieldRelativePath": "#/Data Dictionary/Employer/properties/Employer Name",
+        "kind": "relativePath",
+        "fileType": "hackoladeSchema",
+        "definitionRefs": [
+          [
+            "72e35d63-602e-4581-80e4-4ff6f361cc62",
+            "c4627487-6563-40ca-bbbc-f9b063933c39"
           ]
         ]
       },
@@ -614,7 +558,7 @@
           "compositePrimaryKey",
           "compositeUniqueKey"
         ],
-        "GUID": "c4697796-6a62-4366-9ef8-059e53995933",
+        "GUID": "319d481c-419d-4c77-bfb2-c987c4dc8adb",
         "error": {
           "name": false,
           "code": false
@@ -632,73 +576,31 @@
         "fileType": "hackoladeSchema",
         "definitionRefs": [
           [
-            "937556e6-9d31-4dc7-b579-ee22d4386a8e",
-            "f86f6b08-14ff-480f-b2ce-2a260d903b06"
+            "72e35d63-602e-4581-80e4-4ff6f361cc62",
+            "5c81e4b6-9901-4a42-9891-7e108f99754c"
           ],
           [
-            "3d80d5d6-eeb9-431e-9d84-0ed560fc82d0",
-            "9869fab3-4d56-4ea7-b549-4aefd8660e9d"
-          ]
-        ]
-      },
-      {
-        "name": "Country Name",
-        "hackoladeMeta": {},
-        "isActivated": true,
-        "primaryKey": false,
-        "required": false,
-        "childType": "varchar",
-        "type": "string",
-        "compositeKey": [
-          "compositePrimaryKey",
-          "compositeUniqueKey"
-        ],
-        "GUID": "7506b4a5-5b1c-4095-bfba-1ff981dcae12",
-        "error": {
-          "name": false,
-          "code": false
-        },
-        "glossaryTerms": [
-          {
-            "GUID": "b468ebd2-479c-4997-afc0-707c3a4d2f8e",
-            "glossaryTermId": "e2c4f625-b7b8-4954-8974-2f2515001e8b"
-          }
-        ],
-        "description": "This is the UN agreed name for a country",
-        "link": "bb_data_dictionary.json",
-        "fieldRelativePath": "#/Data Dictionary/Country/properties/Country Name",
-        "kind": "relativePath",
-        "fileType": "hackoladeSchema",
-        "definitionRefs": [
-          [
-            "3d80d5d6-eeb9-431e-9d84-0ed560fc82d0",
-            "9869fab3-4d56-4ea7-b549-4aefd8660e9d"
+            "72e35d63-602e-4581-80e4-4ff6f361cc62",
+            "34a3bfa7-e4a5-4f7b-b0ef-107b5689584b"
           ]
         ]
       }
     ],
     "GUID": "e454f833-c160-447b-becc-22e6f524ff24"
   },
-  "sources": [
-    {
-      "GUID": "f15fad7e-1b0a-407c-b1aa-04ce4fdb26ae",
-      "sourceName": "Renamed Container",
-      "lineageTimestamp": "2026-11-18 17:19:50 CET",
-      "lineageSourceType": "Rename Container",
-      "lineageSourceFormat": "Model",
-      "lineageFilePathName": "C:\\Users\\bursonb\\my_project\\Hackolade\\bb_test_polyglot_model_new_model.hck.json"
-    }
-  ],
+  "sources": [],
   "decorativeSymbols": [],
   "businessGlossaries": [
     {
       "GUID": "42b1e5ec-36b4-4c88-a3f7-40c57df1ebcd",
+      "name": "Business Glossary.csv",
       "updatedAt": "2026-11-18T15:31:17.381Z",
       "hasHeaders": true,
       "format": "custom",
       "collibraPublish": false,
       "columnSeparator": ",",
       "kind": "relativePath",
+      "relativePath": "Business Glossary.csv",
       "mapping": [
         {
           "GUID": "82b43ad3-da05-4c09-9e7d-852ea40580b8",
@@ -740,6 +642,20 @@
   ],
   "businessGlossaryTerms": [
     {
+      "GUID": "d5c1381a-5476-41b9-82ec-48173da9ab82",
+      "glossaryId": "42b1e5ec-36b4-4c88-a3f7-40c57df1ebcd",
+      "name": "Country Code",
+      "properties": {
+        "82b43ad3-da05-4c09-9e7d-852ea40580b8": "CC",
+        "db07d258-f00b-4ed4-9724-f89faf60a160": "Country Code",
+        "09eeb7d8-7868-4de9-ab14-984f85b41c1b": "This is the code that represents countries"
+      },
+      "refIds": [
+        "d07d436a-7c6f-5b1e-8900-6378c51a72f5"
+      ],
+      "updatedAt": "2026-11-18T15:31:17.381Z"
+    },
+    {
       "GUID": "e2c4f625-b7b8-4954-8974-2f2515001e8b",
       "glossaryId": "42b1e5ec-36b4-4c88-a3f7-40c57df1ebcd",
       "name": "Country Name",
@@ -749,7 +665,8 @@
         "09eeb7d8-7868-4de9-ab14-984f85b41c1b": "This is the UN agreed name for a country"
       },
       "refIds": [
-        "c4697796-6a62-4366-9ef8-059e53995933"
+        "db79e13f-3bd7-5266-8845-5513a810024e",
+        "319d481c-419d-4c77-bfb2-c987c4dc8adb"
       ],
       "updatedAt": "2026-11-18T15:31:17.381Z"
     }
@@ -758,8 +675,8 @@
   "appTarget": "Polyglot",
   "creationTS": "2026-11-18T13:06:21.561Z",
   "GUID": "951136ca-1bf3-438b-b38d-dc9edcab052f",
-  "isLineageEnabled": true,
-  "lastModifTS": "2026-11-18T16:32:12.507Z",
+  "isLineageEnabled": false,
+  "lastModifTS": "2026-11-19T09:06:13.010Z",
   "persistenceSchemaVersion": "9",
   "isCreatedByPlugin": true,
   "pluginInformation": {
@@ -775,27 +692,26 @@
       "modelName": false
     }
   },
-  "supertypeGroups": [],
   "settings": {
     "centralPane": {
       "dbLevel": {
         "erd": [
           {
-            "GUID": "937556e6-9d31-4dc7-b579-ee22d4386a8e",
-            "x": 1667.3333740234375,
-            "y": 1536,
-            "width": 537,
-            "height": 136,
+            "GUID": "72e35d63-602e-4581-80e4-4ff6f361cc62",
+            "x": 1476,
+            "y": 1545,
+            "width": 330,
+            "height": 86,
             "color": {
               "hex": "#2196F3"
             }
           },
           {
-            "GUID": "3d80d5d6-eeb9-431e-9d84-0ed560fc82d0",
-            "x": 1673,
-            "y": 1308,
-            "width": 508,
-            "height": 176,
+            "GUID": "e54aa180-63a6-498b-8b0a-7c9c4e15b359",
+            "x": 1437,
+            "y": 1286,
+            "width": 321,
+            "height": 248,
             "color": {
               "hex": "#2196F3"
             }
@@ -809,14 +725,12 @@
         },
         "buckets": [
           {
-            "x": 1603.3333740234375,
-            "y": 1244,
-            "GUID": "487922f1-007e-4136-91ee-ec78797c3b29"
+            "x": 1373,
+            "y": 1222,
+            "GUID": "cf8c828d-80b2-4d48-8518-2dfbc1c4ea67"
           }
         ],
-        "collapsedNodes": [
-          "937556e6-9d31-4dc7-b579-ee22d4386a8e0ad07f8e-aef6-4c99-a32a-217a9bc62022"
-        ],
+        "collapsedNodes": [],
         "activeRelationship": "",
         "activeRelationshipFields": {
           "childField": [],
@@ -827,23 +741,23 @@
         "graphView": {
           "erd": [
             {
-              "GUID": "937556e6-9d31-4dc7-b579-ee22d4386a8e",
+              "GUID": "72e35d63-602e-4581-80e4-4ff6f361cc62",
               "size": 100,
-              "x": 1140.3333740234375,
-              "y": 1049
+              "x": 1040,
+              "y": 1040
             },
             {
-              "GUID": "3d80d5d6-eeb9-431e-9d84-0ed560fc82d0",
+              "GUID": "e54aa180-63a6-498b-8b0a-7c9c4e15b359",
               "size": 100,
-              "x": 1096,
-              "y": 815
+              "x": 388,
+              "y": 718
             }
           ],
           "buckets": [
             {
-              "x": 1607,
-              "y": 1251,
-              "GUID": "487922f1-007e-4136-91ee-ec78797c3b29"
+              "x": 1333,
+              "y": 1274,
+              "GUID": "cf8c828d-80b2-4d48-8518-2dfbc1c4ea67"
             }
           ],
           "decorativeSymbols": [],
@@ -854,18 +768,7 @@
         "diagramViews": [],
         "decorativeSymbols": [],
         "nestedCollectionsLayout": "horizontal",
-        "options": [
-          {
-            "autoWidth": false,
-            "autoHeight": false,
-            "GUID": "937556e6-9d31-4dc7-b579-ee22d4386a8e"
-          },
-          {
-            "autoWidth": false,
-            "autoHeight": false,
-            "GUID": "3d80d5d6-eeb9-431e-9d84-0ed560fc82d0"
-          }
-        ],
+        "options": [],
         "relationshipUpdateDisabled": false
       },
       "collectionLevel": {},
