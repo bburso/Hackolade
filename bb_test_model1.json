@@ -80,6 +80,33 @@
             "code": false,
             "refPath": false
           }
+        },
+        {
+          "isActivated": true,
+          "compositeKey": [
+            "compositePrimaryKey",
+            "compositeUniqueKey"
+          ],
+          "name": "ctry_code",
+          "primaryKey": false,
+          "required": false,
+          "GUID": "f1213b2c-cb08-462f-b660-afea0d61b4cd",
+          "type": "reference",
+          "$ref": "#external/definitions/Country Code",
+          "refType": "external",
+          "ref": "80a79cf7-20c1-467b-8475-f0664ffc7845",
+          "refIdPath": [
+            "951136ca-1bf3-438b-b38d-dc9edcab052f",
+            "e454f833-c160-447b-becc-22e6f524ff24",
+            "80a79cf7-20c1-467b-8475-f0664ffc7845"
+          ],
+          "hackoladeMeta": {},
+          "foreignCollection": "",
+          "foreignField": [],
+          "error": {
+            "name": false,
+            "code": false
+          }
         }
       ],
       "definitions": {
@@ -233,7 +260,9 @@
     "c4627487-6563-40ca-bbbc-f9b063933c39": "employer_name",
     "319d481c-419d-4c77-bfb2-c987c4dc8adb": "Country Name",
     "5c81e4b6-9901-4a42-9891-7e108f99754c": "country_name",
-    "34a3bfa7-e4a5-4f7b-b0ef-107b5689584b": "alternative_country_name"
+    "34a3bfa7-e4a5-4f7b-b0ef-107b5689584b": "alternative_country_name",
+    "f1213b2c-cb08-462f-b660-afea0d61b4cd": "ctry_code",
+    "80a79cf7-20c1-467b-8475-f0664ffc7845": "Country Code"
   },
   "definitions": {
     "type": "definitions",
@@ -582,6 +611,45 @@
           [
             "72e35d63-602e-4581-80e4-4ff6f361cc62",
             "34a3bfa7-e4a5-4f7b-b0ef-107b5689584b"
+          ],
+          [
+            "72e35d63-602e-4581-80e4-4ff6f361cc62",
+            "f1213b2c-cb08-462f-b660-afea0d61b4cd"
+          ]
+        ]
+      },
+      {
+        "name": "Country Code",
+        "hackoladeMeta": {},
+        "isActivated": true,
+        "primaryKey": false,
+        "required": false,
+        "childType": "varchar",
+        "type": "string",
+        "compositeKey": [
+          "compositePrimaryKey",
+          "compositeUniqueKey"
+        ],
+        "GUID": "80a79cf7-20c1-467b-8475-f0664ffc7845",
+        "error": {
+          "name": false,
+          "code": false
+        },
+        "glossaryTerms": [
+          {
+            "GUID": "14452c9d-6c40-4c4f-895f-fd18b9f78b86",
+            "glossaryTermId": "d5c1381a-5476-41b9-82ec-48173da9ab82"
+          }
+        ],
+        "description": "This is the code that represents countries",
+        "link": "bb_data_dictionary.json",
+        "fieldRelativePath": "#/Data Dictionary/Country/properties/Country Code",
+        "kind": "relativePath",
+        "fileType": "hackoladeSchema",
+        "definitionRefs": [
+          [
+            "72e35d63-602e-4581-80e4-4ff6f361cc62",
+            "f1213b2c-cb08-462f-b660-afea0d61b4cd"
           ]
         ]
       }
@@ -676,7 +744,7 @@
   "creationTS": "2026-11-18T13:06:21.561Z",
   "GUID": "951136ca-1bf3-438b-b38d-dc9edcab052f",
   "isLineageEnabled": false,
-  "lastModifTS": "2026-11-19T09:06:13.010Z",
+  "lastModifTS": "2026-11-19T09:22:43.327Z",
   "persistenceSchemaVersion": "9",
   "isCreatedByPlugin": true,
   "pluginInformation": {
@@ -701,7 +769,7 @@
             "x": 1476,
             "y": 1545,
             "width": 330,
-            "height": 86,
+            "height": 104,
             "color": {
               "hex": "#2196F3"
             }
